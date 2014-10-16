@@ -27,3 +27,4 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 bower_components
+.tern-port

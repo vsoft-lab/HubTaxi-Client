@@ -40,7 +40,7 @@ angular.module('itaxiManagerApp')
                 $scope.enabale = true;
             };
 
-            var _id = '53aa37bba7e7997f69000001';
+            var _id = '543f99dcc55e21ab3f000004';
 
             var loadTaxiCompany = function () {
 
@@ -52,7 +52,7 @@ angular.module('itaxiManagerApp')
                     } else {
                         console.log(resp);
                     }
-                })
+                });
             };
 
 
@@ -62,14 +62,12 @@ angular.module('itaxiManagerApp')
 
                 itemSave.save(function (err, result) {
                     if (!err) {
-
-
                         toastr.info('Cập nhật Hãng thành công!');
                         $scope.enabale = true;
                     } else {
                         toastr.error('Lỗi cập nhật thông tin Hãng');
                     }
-                })
+                });
             };
 
             loadTaxiCompany();
