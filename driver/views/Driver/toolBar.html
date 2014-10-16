@@ -1,0 +1,37 @@
+<!----------------------
+    toolbar
+----------------------->
+<div class="menu-bottom">
+<div id="toolBar">
+    <ul class="text-center">
+        <li ng-click="goToCenter()" class="active" ng-model="radioModel" btn-radio="'Left'">
+            <a>
+                <p><i class="fa fa-location-arrow"></i></p>
+
+                <p class="text">Vị trí</p>
+            </a>
+        </li>
+<!--        <li ng-model="radioModel" btn-radio="'Middle'"  hm-touch="checkCustomerEmtry()">
+            <a>
+                <p><i class="fa fa-tachometer"></i></p>
+
+                <p class="text">Message <span ng-show="readMess" style="color: red">(1)</span></p>
+            </a>
+        </li>-->
+        <li ng-model="radioModel" ng-click="switchHistory(1)">
+            <a>
+                <p><i class="fa fa-tachometer"></i></p>
+                <p class="text">Lịch sử</p>
+            </a>
+        </li>
+        <li ng-model="radioModel" btn-radio="'Right-right'"
+            ng-click="logout()">
+            <a>
+                <p><i class="fa fa-power-off"></i></p>
+
+                <p class="text">Đăng xuất</p>
+            </a>
+        </li>
+    </ul>
+</div>
+</div>

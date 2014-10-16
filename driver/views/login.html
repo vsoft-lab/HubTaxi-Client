@@ -1,0 +1,38 @@
+<!--
+        Template Login
+-->
+<div id="lock-screen" class="animated slideInLeft">
+    <div id="lock-screen-content">
+
+        <img id="lock-screen-avatar"  class="img-responsive" src="./images/icon@2x.png"/>
+
+
+        <div id="lock-screen-info"><h1>HubTaxi.vn</h1>
+
+            <div class="email">Contact@Hubtaxi.vn</div>
+
+
+            <!-- form login -->
+            <form action="" class="mbm">
+                <div class="input-group">
+                    <i class="fa fa-picture-o"></i>
+                    <input type="text" class="form-control" placeholder="Biển số xe" ng-model="customer.username">
+
+                </div>
+                <div class="input-group">
+                    <i class="fa fa-key"></i>
+                    <input type="password" class="form-control" placeholder="Mật khẩu" ng-model="customer.password">
+
+                </div>
+                <button type="button" class="btn btn-info" ng-click="login(customer)" ng-disabled="loginProcess">
+                    Đăng nhập</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<style>
+    html, body{
+        position: relative!important;
+    }
+</style>

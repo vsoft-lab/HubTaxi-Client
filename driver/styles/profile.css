@@ -1,0 +1,129 @@
+.profile {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+}
+.profile h3 {
+  margin: 0;
+  background: url('../images/100-30-5.png') #413e3b;
+  color: #FFF;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding-right: 105px;
+}
+.profile h3 span {
+  float: left;
+  font-size: 13px;
+  font-weight: bold;
+  background: #282828;
+  border-radius: 5px;
+  padding: 3px 10px;
+  position: relative;
+  bottom: -1px;
+  box-shadow: 0px 0px 4px #8E8C8C;
+}
+.profile .about-content {
+  padding: 15px;
+  overflow-y: scroll;
+  height: 100%;
+}
+.profile .about-content img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #DCD4D4;
+}
+.profile .about-content .detail-profile {
+  margin-top: 10px;
+}
+.profile .about-content .detail-profile .nav-tabs {
+  margin-bottom: 10px;
+}
+.profile .about-content .detail-profile .nav-tabs li {
+  width: 50%;
+}
+.profile .about-content .detail-profile .table-responsive .list-history {
+  overflow: hidden;
+}
+.profile .about-content .detail-profile .table-responsive .list-history ul li {
+  border: none;
+}
+.profile .about-content .detail-profile .input-chat input {
+  width: 70%;
+  height: 40px;
+}
+.profile .about-content .detail-profile .input-chat button {
+  width: 27%;
+  margin-top: 18px;
+  height: 40px;
+  border-radius: 0;
+}
+.profile .about-content .detail-profile .chat-box {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #AAA;
+  margin-top: 15px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+.profile .about-content .detail-profile .chat-box .taxi-chat {
+  margin-bottom: 5px;
+}
+.profile .about-content .detail-profile .chat-box .taxi-chat .user-name {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.profile .about-content .detail-profile .chat-box .taxi-chat .content-chat {
+  font-size: 15px;
+}
+.profile .about-content .detail-profile .input-chat {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+.profile .about-content .detail-profile .table-responsive table code {
+  font-size: 20px;
+}
+.profile .about-content .detail-profile .table-responsive table td {
+  font-size: 16px;
+}
+.profile .about-content .detail-profile textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profile .about-content .detail-profile button {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.profile .about-content .detail-profile .name {
+  font-weight: bold;
+  font-size: 16px;
+}
+.profile .about-content .detail-profile .rating i {
+  font-size: 19px;
+  color: #E51400;
+}
+.profile.center {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.profile.right {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.profile.transition {
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
