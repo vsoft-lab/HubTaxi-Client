@@ -106,7 +106,7 @@ angular.module('itaxiManagerApp')
                     })
                     .error(function (err) {
                         console.log(err);
-                    })
+                    });
             };
 
             $scope.back = function () {
@@ -125,7 +125,7 @@ angular.module('itaxiManagerApp')
                         console.log('listDriverTypes', $scope.listDriverTypes);
                     }, function (err) {
                         console.log('err : ', err);
-                    })
+                    });
                 }
             };
 
@@ -171,7 +171,7 @@ angular.module('itaxiManagerApp')
                 console.log('scroll');
             };
             $scope.loadDriving = function () {
-                console.log('start scroll');
+                // console.log('start scroll');
                 var sorters = [
                     {
                         property: 'post_time',
