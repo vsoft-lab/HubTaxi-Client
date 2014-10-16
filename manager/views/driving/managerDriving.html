@@ -65,8 +65,8 @@
 
         <div class="col-md-2">
             <div class="add-new-item">
-                <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1"><i
-                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1">
+                  <i class="glyphicon glyphicon-plus"></i> Thêm mới
                 </button>
             </div>
         </div>
@@ -115,6 +115,6 @@
 </div>
 <div class="row" ng-show="activeForm == 1">
     <div class="col-xs-12">
-        <div ng-include="'/views/driving/form-driving.html'"></div>
+        <div ng-include="views/driving/form-driving.html"></div>
     </div>
 </div>

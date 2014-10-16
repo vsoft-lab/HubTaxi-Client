@@ -28,8 +28,6 @@ angular.module('itaxiManagerApp')
 
             $scope.driving = {};
 
-
-
             $scope.activeForm = 0;
 
             $scope.checkCarType = false;
