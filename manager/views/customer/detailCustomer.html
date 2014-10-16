@@ -1,0 +1,71 @@
+<div class="title-content-post">
+    <ol class="breadcrumb pull-left">
+        <li><a href="#">{{getApp.name}}</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+    </ol>
+    <div class="pull-right" ng-show="activeForm == 1">
+        <button type="button" class="btn btn-default" ng-click="back()"><i class="glyphicon glyphicon-chevron-left"></i>
+            Quay lại
+        </button>
+    </div>
+</div>
+<div class="content-post" ng-show="activeForm == 0">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group input-search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="Tìm kiếm">
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="sort-search">
+                <select class="form-control">
+                    <option>Tìm kiếm theo ngày</option>
+                    <option>Tìm kiếm theo vần</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="add-new-item">
+                <button type="button" class="btn btn-primary pull-right" ng-click="gotoPage('main.managerCustomer')"><i
+                        class="glyphicon glyphicon-plus"></i> Quay lại
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-1">
+            <div class="export-new-item">
+                <a download="somedata.xls" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>Thông tin lộ trình Khách Hàng : {{username}}</h4>
+            <div class="table-responsive">
+                <table class="table table-post" id="datatable">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Địa điểm bắt đầu</th>
+                        <th>Địa điểm kết thúc</th>
+                        <th>Quãng đường</th>
+                        <th>Tài xế</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in listUsersHistory">
+                        <td>{{$index}}</td>
+                        <td>{{user.startPoint}}</td>
+                        <td>{{user.endPoint}}</td>
+                        <td>{{user.distance}}</td>
+                        <td>{{user.driver.username || user.driver.fullname}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

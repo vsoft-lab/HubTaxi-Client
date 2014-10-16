@@ -1,0 +1,102 @@
+.overview {
+  .panel {
+    border-radius: 0;
+  }
+  .m-n {
+    margin: 0;
+    a {
+      text-decoration: none;
+    }
+
+    .i-s {
+      margin-right: 15px;
+      position: relative;
+      .hexagol {
+        @transition-time: 0.2s;
+        -webkit-transition:all @transition-time ease-in-out;
+        -moz-transition:all @transition-time ease-in-out;
+        -o-transition:all @transition-time ease-in-out;
+        transition:all @transition-time ease-in-out;
+      }
+      i {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 21px;
+        font-size: 22px;
+        color: #fff;
+      }
+    }
+    .b-a {
+      &:hover {
+        .hexagol {
+          @rotate:  120deg;
+          -ms-transform:rotate(@rotate); /* IE 9 */
+          -webkit-transform:rotate(@rotate); /* Chrome, Safari, Opera */
+          transform:rotate(@rotate); /* Standard syntax */
+        }
+      }
+      &:nth-child(2) {
+        border-right: 0;
+      }
+      &:nth-child(3) {
+        border-bottom: 0;
+      }
+      &:nth-child(4) {
+        border-right: 0;
+        border-bottom: 0;
+      }
+      h4 {
+        margin: 7px 0 0 0;
+        font-size: 22px;
+        &.text-danger {
+          color: #e33244;
+        }
+      }
+    }
+  }
+  .b-a {
+    padding: 15px;
+    border-bottom: 1px solid #eaeef1;
+    border-right: 1px solid #eaeef1;
+  }
+  .hexagol {
+    width: 52px;
+  }
+  .fa-facebook {
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    line-height: 100px;
+    color: rgba(255,255,255,0.8);
+    background: #177bbb;
+  }
+  .fa-twitter {
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    line-height: 100px;
+    color: rgba(255, 255, 255, 0.8);
+    background: #fcc633;
+  }
+  .feed-facebook {
+    overflow: hidden;
+    background: #fff;
+    padding: 17px 0;
+    .col-xs-6 {
+      &:nth-child(1) {
+        border-right: 1px solid #eaeef1;
+      }
+    }
+    span {
+      color: #788288;
+      font-weight: bold;
+      font-size: 23px;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+      color: #999;
+    }
+  }
+}

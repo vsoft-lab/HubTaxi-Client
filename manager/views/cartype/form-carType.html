@@ -1,0 +1,87 @@
+<div class="col-xs-5">
+    <table class="table">
+        <thead>
+        <tr>
+            <th style="width : 150px;">Thông tin</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><b>Loại xe : </b></td>
+            <td><input ng-model="dataType.carMarker" type="text" class="form-control"
+                       value="{{dataType.carMarker}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Mầu</b></td>
+            <td><input ng-model="dataType.color" type="text" class="form-control"
+                       value="{{dataType.color}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Số chỗ</b></td>
+            <td><input ng-model="dataType.seatNum" type="text" class="form-control"
+                       value="{{dataType.seatNum}}"/></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="col-xs-7 detail-hr">
+    <table class="table">
+        <thead>
+        <tr>
+            <th style="width : 150px;">Bảng giá</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><b>Km đầu tiên : từ 0 Km đến </b></td>
+            <td><input required ng-model="dataType.firstKm" type="text" class="form-control"
+                       value="{{dataType.firstKm}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Giá Km đầu tiên :</b></td>
+            <td><input required ng-model="dataType.firstPrice" type="text" class="form-control"
+                       value="{{dataType.firstPrice}}"/></td>
+        </tr>
+
+        <tr>
+            <td><b>Km Thứ 2 từ {{dataType.firstKm}}Km đến : </b></td>
+            <td><input required ng-model="dataType.middleKm" type="text" class="form-control"
+                       value="{{dataType.middleKm}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Giá Km thứ 2: </b></td>
+            <td><input required ng-model="dataType.middlePrice" type="text" class="form-control"
+                       value="{{dataType.middlePrice}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Km cuối: lớn hơn</b></td>
+            <td> {{dataType.middleKm}}</td>
+        </tr>
+        <tr>
+            <td><b>Giá Km Cuối</b></td>
+            <td><input required ng-model="dataType.lastPrice" type="text" class="form-control"
+                       value="{{dataType.lastPrice}}"/></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+<div class="col-xs-12" class="text-center">
+    <div class="pull-left">
+        <button ng-click="createDriverType(dataType)" type="button" class="btn btn-success"><i
+                class="glyphicon glyphicon-edit"></i> Tạo mới
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="back()"><i
+                class="glyphicon glyphicon-lock"></i> Quay lại
+        </button>
+    </div>
+</div>
+<style>
+    .detail-hr tr td {
+        width: 180px !important;
+    }
+</style>

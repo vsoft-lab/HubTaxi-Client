@@ -1,0 +1,37 @@
+    <div class="message">
+        <div class="col-lg-2">
+            <div class="sidebar-message">
+                <h4>Hộp thư thoại</h4>
+                <button type="button" class="btn btn-danger"  ui-sref="main.detailCrm"><a style="color: white;">Soạn</a></button>
+                <ul class="list-unstyled">
+                    <li ui-sref-active="active"><a ui-sref="main.crm.dagui">Hộp thư đến (243)</a></li>
+                    <li ui-sref-active="active" ><a ui-sref="main.crm.chuagui">Thư đã gửi</a></li>
+                    <li ui-sref-active="active"><a>Thư nháp</a></li>
+                    <li ui-sref-active="active"><a>Thùng rác</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-10">
+
+
+            <div ui-view></div>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>

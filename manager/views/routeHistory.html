@@ -1,0 +1,72 @@
+<!------
+    Hiển thị lịch sử lộ trình
+------->
+
+<div class="title-content-post">
+    <ol class="breadcrumb pull-left">
+        <li><a href="#">{{getApp.name}}</a></li>
+    </ol>
+    <div class="pull-right">
+        <button type="button" class="btn btn-default" ng-click="back()"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</button>
+    </div>
+</div>
+<div class="content-post">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group input-search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="Tìm kiếm">
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="sort-search">
+                <select class="form-control">
+                    <option>Tìm kiếm theo ngày</option>
+                    <option>Tìm kiếm theo vần</option>
+                    <option>Tìm kiếm theo trạng thái</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="add-new-item">
+                <button type="button" class="btn btn-primary pull-right"><i
+                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                </button>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="export-new-item">
+                <button type="button" class="btn btn-primary pull-right"><i
+                        class="glyphicon glyphicon-download-alt"></i> Export
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-post">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th align="center">Khách hàng</th>
+                        <th>Lái xe</th>
+                        <th>Biển số</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="route in routeHis">
+                        <td align="center">{{$index+1}}</td>
+                        <td>{{route.customer.username}}</td>
+                        <td>{{route.driver.fullname}}</td>
+                        <td>{{route.driver.username}}</td>
+                        <td>{{route.status}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

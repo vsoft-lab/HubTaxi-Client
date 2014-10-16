@@ -1,0 +1,150 @@
+<!--
+
+<div ng-show="activeForm == 0">
+    <div class="row label-action">
+        <div class="col-xs-9">
+
+            <ol class="breadcrumb">
+                <li><a href="#">{{getApp.name}}</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+        </div>
+        <div class="col-xs-3">
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary" ng-click="activeForm = 1"><i
+                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Table heading</th>
+                        <th>Table heading</th>
+                        <th>Table heading</th>
+                        <th>Table heading</th>
+                        <th>Table heading</th>
+                        <th>Chức năng</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Xóa | Sửa</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" ng-show="activeForm == 1">
+    <div class="col-xs-12">
+        <div ng-include="'/views/customer/form-customer.html'"></div>
+    </div>
+</div>
+-->
+
+<div class="title-content-post">
+    <ol class="breadcrumb pull-left">
+        <li><a href="#">{{getApp.name}}</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+    </ol>
+    <div class="pull-right" ng-show="activeForm == 1">
+        <button type="button" class="btn btn-default" ng-click="back()"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</button>
+    </div>
+</div>
+<div class="content-post" ng-show="activeForm == 0">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group input-search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="Tìm kiếm">
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="sort-search">
+                <select class="form-control">
+                    <option>Tìm kiếm theo ngày</option>
+                    <option>Tìm kiếm theo vần</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="add-new-item">
+                <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1"><i
+                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-1">
+            <div class="export-new-item">
+                <button type="button" class="btn btn-primary pull-right"><i
+                        class="glyphicon glyphicon-download-alt"></i> Export
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-post">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>DeviceID</th>
+                        <th>Số lần gọi Taxi</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in listUsers" ng-click="gotoPage('main.detailCustomer',{id : user._id})">
+                        <td>{{$index}}</td>
+                        <td>{{user.deviceId || user.username}}</td>
+                        <td>{{user.countCallTaxi || 10}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="activeForm == 1">
+    <div class="col-xs-12">
+        <div ng-include="'/views/customer/form-customer.html'"></div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<div id="drivingApp">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal" role="form" name="addDriving">
+                <div class="form-group">
+                    <label for="tendangnhap" class="col-sm-3 control-label">Tên đăng nhập</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="tendangnhap" ng-model="driving.username"
+                               placeholder="Nhập tên đăng nhập" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-3 control-label">Số điện thoại</label>
+
+                    <div class="col-sm-9">
+                        <input type="tel" class="form-control" id="phone" ng-model="driving.phone"
+                               placeholder="Nhập số điện thoại" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fullname" class="col-sm-3 control-label">Tên hiển thị</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fullname" ng-model="driving.fullname"
+                               placeholder="Nhập tên hiện thị" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthday" class="col-sm-3 control-label">Ngày sinh</label>
+
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" id="birthday" ng-model="driving.birthday"
+                               placeholder="Nhập ngày sinh" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3 control-label">Nơi sinh</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="location" ng-model="driving.location"
+                               placeholder="Nhập nơi sinh" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="des" class="col-sm-3 control-label">Mô tả ngắn</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="des" ng-model="driving.bio"
+                               placeholder="Nhập mô tả ngắn" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Loại xe</label>
+
+                    <div class="col-sm-9">
+                        <select ng-change="findSeatNum(driving.type)" ng-model="driving.type"
+                                ng-options="type._id as type.carMarker for type in listDriverTypes">
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group" ng-show="checkSeatShow">
+                    <p style="text-indent: 150px;"> Xe {{CarSeatNum}} Chỗ</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="col-sm-3 control-label">Mật khẩu</label>
+
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="exampleInputPassword1"
+                               ng-model="driving.password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Chọn ảnh đại diện</label>
+
+                    <div class="col-sm-9">
+                        <input class="form-control" type="file" id="exampleInputFile"
+                               ng-file-select="onFileSelect($files, driving)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input checked="checked" type="checkbox"> Cho phép hoạt động
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button ng-click="createDriving(driving)" class="btn btn-success"> Thêm mới</button>
+                        <button class="btn btn-primary" ng-click="driving = {}"> Nhập lại</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>

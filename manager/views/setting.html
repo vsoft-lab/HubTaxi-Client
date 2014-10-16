@@ -1,0 +1,121 @@
+<!------
+    Template Setting-Manager
+------->
+<div class="content-post">
+
+
+    <div id="myTabContent" class="tab-content">
+
+        <div class="tab-pane fade active in" id="profile">
+
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="logo-avatar avatar-setting">
+                        <i class="fa fa-pencil"></i>
+
+                        <img id="img-logo" src="{{checkAvatar(data.logo)}}" alt="logo taxi" class="img-responsive"
+                             ng-click="changeLogo()"/>
+
+
+                        <input id="changeLogo" type="file" style="display:none;"
+                               ng-file-select="onFileSelect($files,data)"/>
+                    </div>
+
+                </div>
+                <div class="col-xs-9 form-edit">
+
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="tencongty" class="col-sm-2 control-label">Tên công ty :</label>
+
+                            <div class="col-sm-6" ng-hide="enabale">
+                                <input type="text" class="form-control" id="tencongty" ng-model="data.companyName">
+                            </div>
+
+                            <div ng-show="enabale" class="col-sm-6">
+                                <p class="name-form">{{data.companyName}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="diagchi" class="col-sm-2 control-label">Địa chỉ :</label>
+
+                            <div class="col-sm-6" ng-hide="enabale">
+                                <input type="text" class="form-control" id="diagchi" ng-model="data.address">
+
+                            </div>
+                            <div class="col-sm-6" ng-show="enabale">
+                                <p class="name-form">{{data.address}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tenfax" class="col-sm-2 control-label">Tên Fax :</label>
+
+                            <div class="col-sm-6" ng-hide="enabale">
+                                <input type="text" class="form-control" id="tenfax" ng-model="data.fax">
+                            </div>
+                            <div class="col-sm-6" ng-show="enabale">
+                                <p class="name-form">{{data.fax}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotline" class="col-sm-2 control-label">Hotline :</label>
+
+                            <div class="col-sm-6" ng-hide="enabale">
+                                <input type="text" class="form-control" id="hotline" ng-model="data.hotline"
+                                        >
+                            </div>
+                            <div class="col-sm-6" ng-show="enabale">
+                                <p class="name-form">{{data.hotline}}</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group description">
+                    <label for="description" class="col-sm-4 control-label">Giới thiệu công ty</label>
+
+                    <div class="col-sm-6" ng-hide="enabale">
+                        <input type="text" class="form-control" id="description"
+                               ng-model="data.description">
+                    </div>
+                    <div ng-show="enabale"><p>{{data.description}}</p></div>
+                </div>
+
+            </div>
+        </div>
+        <button ng-show="enabale" ng-click="change()" type="button" class="btn btn-primary"><i
+                class="glyphicon glyphicon-edit"></i> Sửa thông tin
+        </button>
+
+        <button ng-hide="enabale" ng-click="update(data)" type="button" class="btn btn-primary"><i
+                class="glyphicon glyphicon-edit"></i> Cập nhật
+        </button>
+
+        <button ng-hide="enabale" ng-click="cancelEdit()" type="button" class="btn btn-default"><i
+                class="glyphicon glyphicon-edit"></i> Cancel
+        </button>
+
+
+        <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-lock"></i> Trang Maps
+        </button>
+    </div>
+
+    <style>
+        .form-edit .input-edit {
+            height: 40px;
+        }
+
+        .form-edit .input-edit input {
+            width: 350px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .form-edit p strong {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</div>

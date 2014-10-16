@@ -1,0 +1,140 @@
+<div class="content-post">
+
+
+<div class="overview">
+    <div class="title-state">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Dashboard</h3>
+
+                <p>Chào mừng bạn đến với itaxi manager, <span><i class="fa fa-map-marker text-primary"></i> Hà Nội</span></p>
+            </div>
+            <div class="col-lg-6">
+                <div class="btn-group select-day pull-right">
+                    <a class="btn btn-rounded btn-default b-2x dropdown-toggle" data-toggle="dropdown">Hôm nay <span class="caret"></span></a>
+                    <ul class="dropdown-menu text-left pull-right">
+                        <li><a href="#">1 ngày trước</a></li>
+                        <li><a href="#">7 ngày trước</a></li>
+                        <li><a href="#">1 tháng trước</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel">
+                <div class="row m-n">
+                    <div class="col-lg-6 b-a">
+                        <a href="#" class="block padder-v hover">
+                            <span class="i-s i-s-2x pull-left">
+                                <div class="hexagol">
+                                    <div class="box-5"></div>
+                                    <div class="box-7"></div>
+                                    <div class="box-6"></div>
+                                </div>
+                                <i class="fa fa-plus"></i>
+                            </span>
+                        <span class="clear">
+                            <h4 class="h3 block text-danger">2,000</h4>
+                            <p class="text-muted text-u-c">Đăng ký mới</p>
+                        </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 b-a">
+                        <a href="#" class="block padder-v hover">
+                            <span class="i-s i-s-2x pull-left">
+                                <div class="hexagol">
+                                    <div class="box-8"></div>
+                                    <div class="box-9"></div>
+                                    <div class="box-10"></div>
+                                </div>
+                                <i class="fa fa-users"></i>
+                            </span>
+                        <span class="clear">
+                            <h4 class="h3 block text-success">75%</h4>
+                            <p class="text-muted text-u-c">Người dùng ở Hà Nội</p>
+                        </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 b-a">
+                        <a href="#" class="block padder-v hover">
+                            <span class="i-s i-s-2x pull-left">
+                                <div class="hexagol">
+                                    <div class="box-11"></div>
+                                    <div class="box-12"></div>
+                                    <div class="box-13"></div>
+                                </div>
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                        <span class="clear">
+                            <h4 class="h3 block text-info">11874</h4>
+                            <p class="text-muted text-u-c">Cuộc gọi đặt xe</p>
+                        </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 b-a">
+                        <a href="#" class="block padder-v hover">
+                            <span class="i-s i-s-2x pull-left">
+                                <div class="hexagol">
+                                    <div class="box-14"></div>
+                                    <div class="box-15"></div>
+                                    <div class="box-16"></div>
+                                </div>
+                                <i class="fa fa-clock-o"></i>
+                            </span>
+                        <span class="clear">
+                            <h4 class="h3 block text-primary">{{currentTime| amDateFormat:'h:mm:ss' }}</h4>
+                            <p class="text-muted text-u-c">{{currentTime| amDateFormat:' a' }}</p>
+                        </span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel">
+                <i class="fa fa-facebook"></i>
+                <div class="feed-facebook text-center">
+                    <div class="col-xs-6">
+                        <span>42K</span>
+                        <p>Follows</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <span>90</span>
+                        <p>Feeds</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+            <div class="panel">
+                <i class="fa fa-twitter"></i>
+                <div class="feed-facebook bg text-center">
+                    <div class="col-xs-6">
+                        <span>90K</span>
+                        <p>Đăng ký</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <span>120</span>
+                        <p>Tin nhắn</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="donutchart" style="width: 900px; height: 500px;"></div>
+        </div>
+
+    </div>
+
+</div>
+</div>

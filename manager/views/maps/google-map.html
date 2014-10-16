@@ -1,0 +1,80 @@
+<!------
+    Template Map-taxi
+------->
+
+<div class="google-map">
+
+    <!------
+        Hiển thị số liệu trên map
+    ------->
+    <div class="title-state list-taxi">
+        <ul class="nav nav-pills">
+            <li><a>Tổng số xe trên bản đồ  : {{Object.keys(listTaxi).length}}</a></li>
+            <li><a>Số xe đang chạy : {{Object.keys(listTaxiRuning).length}}</a></li>
+            <li><a>Số xe đang đợi : {{Object.keys(listTaxiWaiting).length}}</a></li>
+            <li class="pull-right"> <input type="text" placeholder="Tìm kiếm" />
+            </li>
+        </ul>
+    </div>
+    <!------
+        End hiển thị số liệu trên map
+    ------->
+
+    <!------
+        Hiển Thị Map
+    ------->
+<div id="map-canvas"></div>
+    <!------
+        End hiển thị map
+    ------->
+
+
+</div>
+
+
+
+<!------
+    Hiển thị thông tin tài xế
+------->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Thông tin tài xế</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img ng-src="{{appConfig.mediaHost + taxiInfo.avatar}}" alt="" class="img-thumbnail" width="100%" height="200px"/>
+                    </div>
+                    <div class="col-md-8">
+                        <ul>
+                            <li><strong>Họ tên</strong> : {{taxiInfo.fullname}}</li>
+                            <li><strong>Số điện thoại</strong> : {{taxiInfo.phone}}</li>
+                            <li><strong>Địa chỉ</strong> : {{taxiInfo.location}}</li>
+                            <li><strong>Loại xe</strong> : {{taxiInfo.type.carMarker}}</li>
+                            <li><strong>Số chỗ</strong> : 4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" ng-click="$state.go('main.detailDriving', {id: taxiInfo.id})">Thông tin chi tiết</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------
+    End Hiển thị thông tin tài xế
+------->
+
+<style>
+    .modal-body li{
+        font-family: Tahoma, Geneva, sans-serif;
+        padding-bottom: 9px;
+
+    }
+</style>

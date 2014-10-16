@@ -1,0 +1,72 @@
+#map-canvas {
+  height: 100% ;
+  padding-top: 15px;
+  border: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.title-state {
+  h3 {
+    color: rgba(0,0,0,0.8);
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  p {
+    font-size: 12px;
+    color: #747474;
+    span {
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+  .select-day {
+    margin-top: 30px;
+    a {
+      border-radius: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-width: 2px;
+      color: #788288 !important;
+      background-color: #fcfcfd;
+      border-color: #d2dae1;
+      border-bottom-color: #cbd5dd;
+      -webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+      box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+      &.open {
+        color: #788288 !important;
+        background-color: #ebeef4;
+        border-color: #b9c6d0;
+      }
+    }
+  }
+}
+.google-map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1px solid #ddd;
+
+  .chart {
+    height:400px;
+    .ac-title {
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      margin-bottom: 5px;
+    }
+  }
+}
+.list-taxi {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+

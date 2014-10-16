@@ -1,0 +1,20 @@
+<div class="detail-crm">
+    <form>
+        <h2>Soạn thảo tin nhắn<jp-ng-bs-animated-button is-submitting="isSubmitting" result="result" options="options" class="btn btn-primary pull-right" ng-click="sendMessage(dataSend);fakeSubmit()">Gửi tin nhắn</jp-ng-bs-animated-button>
+            <!--<jp-ng-bs-animated-button is-submitting="isSubmitting" result="result" options="options" ng-click="fakeSubmit()"></jp-ng-bs-animated-button>-->
+        </h2>
+        <div class="form-group row">
+            <label for="nameacc" class="col-sm-2 control-label">Người nhận: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="nameacc" placeholder="Nhập tài khoản người nhận" ng-model="dataSend.receiver" autofocus>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="tieude" class="col-sm-2 control-label">Tiêu đề: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="tieude" placeholder="Nhập tiêu đề" ng-model="dataSend.title">
+            </div>
+        </div>
+        <text-angular ng-model="dataSend.content"></text-angular>
+    </form>
+</div>

@@ -1,0 +1,53 @@
+
+
+    <div class="search-message">
+        <div class="input-group col-lg-7">
+            <input type="text" class="form-control" placeholder="Tìm kiếm thư">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <div class="nav-bar-message">
+        <div class="col-lg-6">
+            <div class="left-nav">
+                <div class="btn-group">
+                    <button style="background: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1)) !important;
+" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Tác vụ <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Thư đã đọc</a></li>
+                        <li><a href="#">Thư chưa đọc</a></li>
+                        <li><a href="#">Sắp xếp theo vần</a></li>
+                        <li><a href="#">Thư mới</a></li>
+                        <li><a href="#">thư cũ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="right-nav pull-right">
+                <span>1-50</span> trong tổng số <span>1435</span>
+                <div class="btn-group">
+                    <button style="background: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1)) !important;
+" type="button" class="btn btn-default"><i class="fa fa-chevron-left"></i></button>
+                    <button style="background: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1)) !important;
+" type="button" class="btn btn-default"><i class="fa fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-message">
+        <table class="table">
+            <tbody>
+            <tr ng-repeat="data in messageGroup | limitTo : 50" ng-click="open('lg')">
+                <td><i class="fa fa-envelope-o"></i> {{data.name}}</td>
+                <td>{{data.title}} <span>{{data.detail}}</span></td>
+                <td>{{data.time}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>

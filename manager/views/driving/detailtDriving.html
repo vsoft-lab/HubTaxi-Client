@@ -1,0 +1,316 @@
+<div id="drivingApp">
+
+<div class="row label-action">
+    <div class="col-xs-9">
+
+        <ol class="breadcrumb">
+            <li><a href="#">{{getApp.name}}</a></li>
+            <li><a ui-sref="main.managerDriving">Quản lý lái xe</a></li>
+            <li class="active">Thông tin</li>
+        </ol>
+    </div>
+    <div class="col-xs-3">
+        <div class="pull-right">
+            <button type="button" class="btn btn-default" ng-click="gotoPage('main.managerDriving')"><i
+                    class="glyphicon glyphicon-chevron-left"></i> Quay lại
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="detailt-tab">
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#profile" data-toggle="tab">Thông tin</a></li>
+    <li class=""><a href="#historyLocation" data-toggle="tab">Lịch sử lộ trình</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+
+    <div class="tab-pane fade active in" id="profile">
+        <div class="detail-profile">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="logo-avatar">
+                        <i class="fa fa-pencil"></i>
+                        <!--<img id="chAvatar" src="http://eng.sut.ac.th/ae/engsut/sites/default/files/imagefield_default_images/default_user_avatar_thumb.png" alt="" class="img-responsive" ng-click="changeAvatar()"/>-->
+                        <img id="chAvatar" src="{{checkAvatar(driver.avatar)}}" alt="" class="img-responsive" ng-click="changeAvatar()"/>
+                        <input type="file" name="pic" id="changeAva" ng-file-select="selectFile($files, driver)" style="display:none;">
+                        <!--<button >aaaa</button>-->
+
+                        <div class="upload-add" ng-click="uploads()" ng-class="classShowUpload">
+                            <nav>
+                                <a>Tải lên</a>
+                                <a>Xóa</a>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xs-10">
+                    <div ng-show="enabale" ng-click="change()"><h3>{{driver.fullname}}</h3></div>
+                    <div ng-hide="enabale"><input ng-enter="update(driver)" class="form-control" style="width: 250px;float: left;
+margin-right: 10px;" type="text"
+                                                  ng-model="driver.fullname"/>
+                        <button class="btn btn-success" ng-click="update(driver)"> Cập nhật</button>
+                        <button class="btn btn-default" ng-click="change()"> Hủy</button>
+                    </div>
+
+                    <p>
+                        <strong>Tên đăng nhập: </strong> {{driver.username}}
+                    </p>
+
+                    <p>
+                        <strong>Ngày sinh: </strong> {{driver.birthday | amDateFormat:'D - MM - YYYY'}}
+                    </p>
+
+                    <p>
+                        <strong style="float: left;"> Số điện thoại : </strong>
+                    <span ng-show="enabalePhone" ng-click="changePhone()">{{driver.phone}}</span>
+                    <span ng-hide="enabalePhone" style="position: relative;
+top: -7px;">
+                        <input ng-enter="update(driver)" class="form-control" style="width: 250px;float: left;
+                margin-right: 10px; position: relative;
+top: 0px;" type="text"
+                                                                  ng-model="driver.phone"/>
+                                        <button class="btn btn-success" ng-click="update(driver)"> Cập nhật</button>
+                                        <button class="btn btn-default" ng-click="changePhone()"> Hủy</button>
+                         </span>
+
+                    </p>
+
+                    <p>
+                        <strong>Đánh giá : </strong> {{driver.like}}
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="change-info">
+                    <div class="col-md-2">
+                        <ul class="list-unstyled info-taxi-people">
+                            <li>
+                                <b>Giới thiệu:</b>
+                            </li>
+                            <li>
+                                <b>Địa chỉ:</b>
+                            </li>
+                            <li>
+                                <b>Loại xe:</b>
+                            </li>
+                            <li>
+                                <b>Số chỗ:</b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul ng-hide="activeForm" class="list-unstyled info-taxi-people">
+                            <li>{{driver.bio}}</li>
+                            <li>{{driver.location}}</li>
+                            <li>{{driver.type.carMarker}}</li>
+                            <li>{{driver.type.seatNum}}</li>
+                        </ul>
+                        <ul ng-show="activeForm" class="list-unstyled edit-info-taxi-people">
+                           <li><input ng-model="driver.bio" type="text" class="form-control"
+                                      value="{{driver.bio}}"/></li>
+                            <li><input ng-model="driver.location" type="text" class="form-control"
+                                       value="{{driver.location}}"/></li>
+                            <li><select ng-change="find(driver.type._id)" ng-model="driver.type._id"
+                                        ng-options="type._id as type.carMarker for type in DriverTypes">
+                            </select></li>
+                            <li><input disabled ng-model="driver.type.seatNum" type="text" class="form-control"
+                                       value="{{driver.type.seatNum}}"/>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="button-edit" ng-hide="activeForm">
+                <button type="button" class="btn btn-primary" ng-click="activeFormFun()"><i
+                        class="glyphicon glyphicon-edit"></i> Sửa thông tin
+                </button>
+                <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-lock"></i> Đổi
+                    mật khẩu
+                </button>
+            </div>
+            <div class="button-edit" ng-show="activeForm">
+                <button ng-click="update(driver);activeFormFun()" type="button" class="btn btn-success"><i
+                        class="glyphicon glyphicon-edit"></i> Cập nhật
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="back()"><i
+                        class="glyphicon glyphicon-lock"></i> Hủy bỏ
+                </button>
+            </div>
+<!--            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th style="width : 150px;">Thông tin</th>
+                            <th></th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><b>Giới thiệu</b></td>
+                            <td>{{driver.bio}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Địa chỉ</b></td>
+                            <td>{{driver.location}}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Loại xe</b></td>
+                            <td>{{driver.type.carMarker}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Số chỗ</b></td>
+                            <td>{{driver.type.seatNum}}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary" ng-click="activeForm = 1"><i
+                            class="glyphicon glyphicon-edit"></i> Sửa thông tin
+                    </button>
+                    <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-lock"></i> Đổi
+                        mật khẩu
+                    </button>
+                </div>
+            </div>-->
+        </div>
+<!--
+        <div class="form-profile" ng-show="activeForm == 1">
+            <div class="row">
+                <div class="col-xs-2">
+                    <img src="http://eng.sut.ac.th/ae/engsut/sites/default/files/imagefield_default_images/default_user_avatar_thumb.png"
+                         alt="" class="img-responsive"/>
+                </div>
+                <div class="col-xs-10">
+                    <div ng-show="enabale" ng-click="change()"><h3>{{driver.fullname}}</h3></div>
+                    <div ng-hide="enabale"><input ng-enter="update(driver)" class="form-control" style="width: 250px;float: left;
+margin-right: 10px;" type="text"
+                                                  ng-model="driver.fullname"/>
+                        <button class="btn btn-success" ng-click="update(driver)"> Cập nhật</button>
+                        <button class="btn btn-default" ng-click="change()"> Hủy</button>
+                    </div>
+
+                    <p>
+                        <strong>Tên đăng nhập: </strong> {{driver.username}}
+                    </p>
+
+                    <p>
+                        <strong>Ngày sinh: </strong> {{driver.birthday}}
+                    </p>
+
+                    <p>
+                        <strong>Số điện thoại : </strong> {{driver.phone}}
+                    </p>
+
+                    <p>
+                        <strong>Đánh giá : </strong> {{driver.like}}
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th style="width : 150px;">Thông tin</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><b>Giới thiệu</b></td>
+                            <td><input ng-model="driver.bio" type="text" class="form-control"
+                                       value="{{driver.bio}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Số điện thoại</b></td>
+                            <td><input ng-model="driver.phone" type="text" class="form-control"
+                                       value="{{driver.phone}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Địa chỉ</b></td>
+                            <td><input ng-model="driver.location" type="text" class="form-control"
+                                       value="{{driver.location}}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Loại xe</b></td>
+                            <td>
+                                <select ng-model="driver.type._id"
+                                        ng-options="type._id as type.carMarker for type in DriverTypes">
+                                </select>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <button ng-click="update(driver)" type="button" class="btn btn-success"><i
+                            class="glyphicon glyphicon-edit"></i> Cập nhật
+                    </button>
+                    <button type="button" class="btn btn-primary" ng-click="back()"><i
+                            class="glyphicon glyphicon-lock"></i> Hủy bỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+-->
+
+    </div>
+
+    <div class="tab-pane fade" id="historyLocation">
+        <h4 ng-show="userNotRouter" class="text-center">Lái xe {{driver.username}} chưa có lộ trình nào!!!</h4>
+
+        <div ng-hide="userNotRouter">
+            <div class="search-message">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="search" placeholder="Tìm kiếm">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                </div>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Bắt đầu</th>
+                    <th>Kết thúc</th>
+                    <th>Tên khách hàng</th>
+                    <th>Điểm bắt đầu</th>
+                    <th>Điểm kết thúc</th>
+                    <th>Độ dài</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="history in RouteHistories | filter:search">
+                    <td>{{$index}}</td>
+                    <td>{{history.endAt | date:'HH : mm dd-MM-yyyy'}}</td>
+                    <td>{{history.startAt | date:'HH: mm dd-MM-yyyy'}}</td>
+                    <td>{{history.customer.username}}</td>
+                    <td>{{history.startPoint}}</td>
+                    <td>{{history.endPoint}}</td>
+                    <td>{{history.distance}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+<script>
+    $('.detailt-tab #myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>

@@ -1,0 +1,99 @@
+.message {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 3px #353535;
+  border-radius: 4px;
+}
+.message .sidebar-message h4 {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+.message .sidebar-message button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.message .sidebar-message ul li {
+  border-left: 2px solid transparent;
+  cursor: pointer;
+}
+.message .sidebar-message ul li.active {
+  border-left: 2px solid #dd4b39;
+}
+.message .sidebar-message ul li.active a {
+  color: #dd4b39;
+  font-weight: 600;
+}
+.message .sidebar-message ul li:hover {
+  background: #eee;
+}
+.message .sidebar-message ul li a {
+  text-decoration: none;
+  color: #222;
+  font-size: 13px;
+  line-height: 30px;
+  padding: 0 10px;
+  display: block;
+}
+.message .search-message {
+  padding-top: 15px;
+}
+.message .search-message input {
+  border-radius: 0;
+}
+.message .search-message button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.message .nav-bar-message {
+  padding: 15px 0;
+}
+.message .nav-bar-message button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f1f1f1)) !important;
+  font-size: 13px;
+}
+.message .nav-bar-message button i {
+  font-size: 14px;
+}
+.message .nav-bar-message .right-nav {
+  font-size: 13px;
+}
+.message .nav-bar-message .right-nav span {
+  font-weight: 600;
+}
+.message .nav-bar-message .right-nav span:nth-child(2) {
+  margin-right: 5px;
+}
+.message .content-message {
+  margin-top: 35px;
+}
+.message .content-message tr td {
+  font-size: 13px;
+}
+.message .content-message tr td:nth-child(1) {
+  width: 24%;
+}
+.message .content-message tr td:nth-child(1) i {
+  margin-right: 5px;
+}
+.message .content-message tr td:nth-child(2) {
+  width: 65%;
+}
+.message .content-message tr td:nth-child(2) span {
+  font-size: 12px;
+  color: #999;
+}
+.message .content-message tr td:nth-child(3) {
+  width: 11%;
+  text-align: center;
+}
+.ta-scroll-window.ta-text.ta-editor.form-control {
+  margin-top: 10px;
+}
+.detail-crm h2 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.detail-crm .control-label {
+  line-height: 29px;
+}

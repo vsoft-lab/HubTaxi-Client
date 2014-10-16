@@ -1,0 +1,221 @@
+<nav class="navbar navbar-default" role="navigation" id="header">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=""><img src="./images/logo-full.png" alt="logo"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th"></i></a>
+                    <ul class="dropdown-menu setting-menu animate-setting-menu">
+                        <li>
+                            <a>
+                                <i class="fa fa-envelope-o"></i>
+
+                                <p>Mail Box</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="fa fa-credit-card"></i>
+
+                                <p>Mail Box</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="fa fa-folder-open-o"></i>
+
+                                <p>Mail Box</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="fa fa-music"></i>
+
+                                <p>Mail Box</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="fa fa-suitcase"></i>
+
+                                <p>Mail Box</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="fa fa-caret-square-o-right"></i>
+
+                                <p>Mail Box</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="glyphicon glyphicon-comment"></i> <span
+                            class="badge">42</span></a>
+                    <!-- <ul class="dropdown-menu animate notifive">
+                        <h5>bạn có 3 tin nhắn mới</h5>
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                         src="../images/a0.png">
+                                </a>
+
+                                <div class="media-body">
+                                    <h4 class="media-heading">Thinh NV đã gửi bạn 1 thư</h4>
+
+                                    <p>1 phút trước</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-envelope-o"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h4 class="media-heading">Thinh NV đã gửi bạn 1 thư</h4>
+
+                                    <p>1 phút trước</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                         src="../images/a0.png">
+                                </a>
+
+                                <div class="media-body">
+                                    <h4 class="media-heading">Thinh NV đã gửi bạn 1 thư</h4>
+
+                                    <p>1 phút trước</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> -->
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="./images/a0.png"
+                                                                                    alt="avatar"/>
+                        <span>{{ userInfo.fullname }}</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="logout()">Đăng xuất</a></li>
+                        <li><a>Another action</a></li>
+                        <li><a>Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a>Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<div id="content">
+    <div class="col-lg-2 col-md-2 side-bar-left">
+        <div class="thumbnail-feature">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" alt="logo-hang" src="./images/a0.png">
+                </a>
+
+                <div class="media-body">
+                    <h4 class="media-heading">{{ userInfo.fullname }}</h4>
+                    {{userInfo.role.title}}
+                </div>
+            </div>
+        </div>
+        <div class="menu-left">
+            <div class="start">
+                Start
+            </div>
+            <div class="list-menu">
+                <ul class="list-unstyled">
+                    <li ui-sref-active="active">
+                        <a ui-sref="main.googlemap"><i class="fa fa-picture-o"></i> Taxi Map <span
+                                class="radius pull-right"></span></a>
+                    </li>
+                 <!--<li ui-sref-active="active">
+                        <a ui-sref="main.overview"><i class="fa fa-tachometer"></i> Tổng quan <span
+                                class="radius pull-right"></span></a>
+                    </li>-->
+
+                    <li ui-sref-active="active" ng-class="{ active: $state.includes('main.detailCarType'),active1 : $state.includes('main.managerCarType')}">
+                        <a ui-sref="main.managerCarType"><i class="fa fa-taxi"></i> Quản lý Loại xe<span
+                                class="radius pull-right"></span></a>
+                    </li>
+                    <li ui-sref-active="active"
+                        ng-class="{ active: $state.includes('main.detailDriving'),active1 : $state.includes('main.managerDriving')}">
+                        <a ui-sref="main.managerDriving"><i class="fa fa-user"></i> Quản lý lái xe <span
+                                class="radius pull-right"></span></a>
+                    </li>
+
+                    <li ui-sref-active="active" ng-class="{ active: $state.includes('main.detailCustomer'),active1 : $state.includes('main.managerCustomer')}">
+                        <a ui-sref="main.managerCustomer"><i class="fa fa-sitemap"></i> Quản lý khách hàng <span
+                                class="radius pull-right"></span></a>
+                    </li>
+
+                    <li ui-sref-active="active">
+                        <a ui-sref="main.routeHistory"><i class="fa fa-users"></i> Quản lý lộ trình <span
+                                class="radius pull-right"></span></a>
+                    </li>
+<!--
+
+                    <li ui-sref-active="active">
+                        <a ui-sref="main.crm.dagui"><i class="fa fa-users"></i> Quan hệ khách hàng <span
+                                class="radius pull-right"></span></a>
+                    </li>
+-->
+
+<!--
+                    <li ui-sref-active="active">
+                        <a ui-sref="main.reportSystem"><i class="fa fa-file-text"></i> Báo cáo<span
+                                class="radius pull-right"></span></a>
+                    </li>-->
+                    <li ui-sref-active="active">
+                        <a ui-sref="main.settings"><i class="fa fa-cog"></i> Thiết lập<span
+                                class="radius pull-right"></span></a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a href="" ng-click="logout()"><i class="fa fa-power-off"></i> Thoát<span
+                                class="radius pull-right"></span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-10 content-state">
+        <div ui-view ng-animate="'ui-view'" class="content">
+        </div>
+    </div>
+</div>
+<style>
+    li.active1 a {
+        background-color: #1aae88;
+        color: #fff!important;
+    }
+</style>

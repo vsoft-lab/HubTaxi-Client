@@ -1,0 +1,152 @@
+<!--
+<div ng-show="activeForm == 0">
+    <div class="row label-action">
+        <div class="col-xs-9">
+
+            <ol class="breadcrumb">
+                <li><a href="#">{{getApp.name}}</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+        </div>
+        <div class="col-xs-3">
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary" ng-click="activeForm = 1"><i
+                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Loại xe</th>
+                        <th>Mầu</th>
+                        <th>Số chỗ</th>
+                        <th>Km đầu tiên</th>
+                        <th>Giá Km đầu tiên</th>
+                        <th>Km thứ hai</th>
+                        <th>Giá KM thứ 2</th>
+                        <th>KM Cuối</th>
+                        <th>Giá KM cuối</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in listDriverTypes" ng-click="gotoPage('main.detailCarType',{id : data._id})">
+                        <td>{{$index}}</td>
+                        <td>{{data.carMarker}}</td>
+                        <td>{{data.color}}</td>
+                        <td>{{data.seatNum}}</td>
+                        <td> < {{data.firstKm}} Km</td>
+                        <td>{{data.firstPrice}} VNĐ</td>
+                        <td>{{data.firstKm}} Km đến < {{data.middleKm}} Km</td>
+                        <td>{{data.middlePrice}} VNĐ</td>
+                        <td>Lớn hơn {{data.middleKm}} Km</td>
+                        <td>{{data.lastPrice}} VNĐ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" ng-show="activeForm == 1">
+    <div class="col-xs-12">
+        <div ng-include="'views/cartype/form-carType.html'"></div>
+    </div>
+</div>
+-->
+
+
+<div class="title-content-post">
+    <ol class="breadcrumb pull-left">
+        <li><a href="#">{{getApp.name}}</a></li>
+        <li><a href="#">Quản lý loại xe</a></li>
+        <li ng-show="activeForm == 1"><a href="#" >Danh sách loại xe</a></li>
+        <li class="active" ng-show="activeForm == 0">Danh sách loại xe</li>
+        <li class="active" ng-show="activeForm == 1">Thông tin {{data.carMarker}}</li>
+    </ol>
+</div>
+<div class="content-post" ng-show="activeForm == 0">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group input-search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="Tìm kiếm" ng-model="search">
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="sort-search">
+                <select ng-model="selectType" ng-change="chooseType(selectType)" class="form-control">
+                    <option selected>Tất cả xe</option>
+                    <option>4 Chỗ</option>
+                    <option>7 Chỗ</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="add-new-item">
+                <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1"><i
+                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-1">
+            <div class="export-new-item">
+                <a download="somedata.xls"
+                   onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-post" id="datatable">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Loại xe</th>
+                        <th>Mầu</th>
+                        <th>Số chỗ</th>
+                        <th>Km đầu tiên</th>
+                        <th>Giá Km đầu tiên</th>
+                        <th>Km thứ hai</th>
+                        <th>Giá KM thứ 2</th>
+                        <th>KM Cuối</th>
+                        <th>Giá KM cuối</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in listDriverTypes | filter:search"
+                        ng-click="gotoPage('main.detailCarType',{id : data._id})">
+                        <td>{{$index}}</td>
+                        <td>{{data.carMarker}}</td>
+                        <td>{{data.color}}</td>
+                        <td>{{data.seatNum}}</td>
+                        <td> < {{data.firstKm}} Km</td>
+                        <td>{{data.firstPrice}} VNĐ</td>
+                        <td>{{data.firstKm}} Km đến < {{data.middleKm}} Km</td>
+                        <td>{{data.middlePrice}} VNĐ</td>
+                        <td>Lớn hơn {{data.middleKm}} Km</td>
+                        <td>{{data.lastPrice}} VNĐ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="activeForm == 1">
+        <div class="col-xs-12">
+            <div ng-include="'views/cartype/form-carType.html'"></div>
+        </div>
+</div>
