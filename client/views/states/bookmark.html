@@ -1,0 +1,52 @@
+<ion-view title="Địa điểm yêu thích" class="bookmark">
+    <ion-content padding="true">
+
+        <!--<div class="list">
+
+            <a class="item &lt;!&ndash;item-avatar&ndash;&gt;" href="#" ng-repeat="bookmark in listBookmarks">
+
+                <h2 class="address start">{{bookmark.startPoint}}</h2>
+            </a>
+        </div>-->
+
+        <div class="text-center">
+            <img ng-show="checkBookmarks" style="width: 50px;" class="text-center" src="./images/bookmark.png" alt="bookmark"/>
+        </div>
+
+        <p  ng-show="checkBookmarks" class="text-center"> <i ng-class="quickstylebookmark" class="icon ion-star"></i> Hiện tại bạn chưa lưu địa điểm đến nào!</p>
+
+
+
+        <!--<div class="list" style="margin-top: 15px">
+            <label class="item item-input">
+                <img src="../../images/me.png" alt=""/>
+
+                <input style="width: 100%" type="text" select-on-click id="bmcurrent"
+                       placeholder="bookmark địa điểm hiện tại">
+            </label>
+            <label class="item item-input">
+                <img src="../../images/taxi.png" alt=""/>
+
+                <input type="text" placeholder="bookmark địa điểm đến" select-on-click id="bmgoto"/>
+            </label>
+        </div>
+        -->
+
+        <h5 ng-show="!checkBookmarks" class="text-center">
+            <img src="./images/Local-Icon-06.png" alt=""/>
+            <div class="text-center">Các địa điểm đã lưu </div>
+        </h5>
+        <ul>
+            <li ng-repeat="bookmark in listBookmarks" ng-click="selectBookmark(bookmark)">
+                <div><i class="ion-ios7-location"></i> {{bookmark.bookmarkPoint}}</div>
+                <!--<button ng-click="deleteBookmark(bookmark)"><i class="ion-close-round"></i></button>-->
+            </li>
+
+        </ul>
+    </ion-content>
+    <div class="bar bar-footer">
+        <button ng-click="showAddBookmark()" class="button button-block button-positive" style="margin: 0">
+            Tạo Bookmark
+        </button>
+    </div>
+</ion-view>

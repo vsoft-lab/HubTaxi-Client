@@ -1,0 +1,55 @@
+.my-taxi .search-form {
+  position: relative;
+}
+.my-taxi .search-form input {
+  height: 35px;
+  border: 1px solid #ddd;
+  margin-bottom: 1px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  padding-left: 35px;
+  background: #ddd;
+}
+.my-taxi .search-form input:focus {
+  background: #fff;
+}
+.my-taxi .search-form i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 35px;
+  padding: 0 10px;
+  font-size: 23px;
+}
+.my-taxi .list a {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  padding-right: 45px;
+  margin-bottom: 1px;
+}
+.my-taxi .list a h2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.my-taxi .list a p {
+  font-size: 13px;
+  margin: 0;
+}
+.my-taxi .list a p:nth-child(2) {
+  font-size: 12px;
+}
+.my-taxi .list a i {
+  position: absolute;
+  top: 32px;
+  right: 5px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  background: #43cee6;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+}

@@ -1,0 +1,76 @@
+<ion-view title="Thông tin hãng taxi" class="company-detail">
+    <ion-content padding="true">
+
+        <ion-view title="{{pageTitleCalu}}" class="diver-info">
+            <ion-content padding="false">
+                <div class="button-bar bar-stable">
+
+                </div>
+
+
+                <div class="box info">
+                    <div class="avatar">
+                        <img ng-src="{{getImgUrl(infomation[0].avatar)}}"/>
+                    </div>
+                    <div class="follow-taxi">
+
+                        <!--<button class="button button-positive">
+                            <i class="ion-checkmark-round" ></i> Đặt làm tài xế riêng
+                        </button>-->
+
+                        <div class="username">
+                            <p>Hãng Mai Linh</p>
+
+                            <p>Địa chỉ: 102 Láng Hạ, Đống Đa, Hà Nội</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="price-taxi">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>km đầu</th>
+                                <th>km thứ 2</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Km</td>
+                                <td>1000đ</td>
+                                <td>10000đ</td>
+                                <td>100000đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giá</td>
+                                <td>2000đ</td>
+                                <td>20000đ</td>
+                                <td>3000000đ</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="call-info" ng-if="!status.hasRouter && status.hasDriveAccept">
+                        <button class="button button-block button-balanced" ng-click="chooseTaxi(infomation[0])"
+                                ng-disabled="status.chooseTaxiProcess">
+                            <i class="ion-ios7-telephone"></i> Tổng đài
+                        </button>
+                    </div>
+
+
+                    <div class="call-info" ng-if="!status.hasRouter && !status.hasDriveAccept">
+                        <button class="button button-block button-balanced" ng-click="quickChooseTaxi(infomation[0])"
+                                ng-disabled="status.chooseTaxiProcess">
+                            <i class="ion-ios7-telephone"></i> Gọi tổng đài
+                        </button>
+                    </div>
+
+                </div>
+            </ion-content>
+        </ion-view>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-view title="{{pageTitleCalu}}" class="list-taxi-accept">
+    <ion-content>
+        <p ng-if="$stateParams.hasTaxi == 'false'" style="text-align: center;
+border-color: #498f24;
+background-color: #6c3;
+margin: 0;
+padding: 5px;
+font-size: 13px;
+color: #fff;">Không có taxi nào trong khu vực <br> chấp nhận yêu cầu!.</p>
+
+        <div class="taxi-accept" ng-if="$stateParams.hasTaxi == 'true'">
+            <div class="list">
+                <a class="item item-avatar accerpt" ng-repeat="taxi in listTaxi">
+                    <img ng-click="goToPage('app.driverInfo',{id : taxi.id})" ng-src="{{getImgUrl(taxi.avatar)}}"/>
+
+                    <h2 ng-click="goToPage('app.driverInfo',{id : taxi.id})">{{taxi.fullname}} </h2>
+
+                    <p ng-click="goToPage('app.driverInfo',{id : taxi.id})">Hãng: {{taxi.company.companyName}}</p>
+                    <button class="button button-positive" ng-click="showConfirmCall(taxi)"
+                            ng-disabled="status.callTaxiProcess"><i class="ion-android-call"></i></button>
+                </a>
+
+            </div>
+            <div class="text-center">
+                <a style="text-decoration: initial;" ui-sref="app.home"><i class="ion-android-arrow-back"></i> Quay trở
+                    lại</a>
+            </div>
+        </div>
+
+        <div class="noTaxiAccept" ng-if="$stateParams.hasTaxi == 'false'" style="padding: 10px">
+
+            <div class="list">
+
+                <a class="item item-avatar" ng-repeat="list in listTaxiGroup">
+                    <img src="{{list.logo}}" alt=""/>
+
+                    <h2>{{list.group}}</h2>
+
+                    <p>Hotline : {{list.call}}</p>
+                    <i class="ion-android-call" ng-click="showConfirm(list)"></i>
+                </a>
+            </div>
+            <!--<div class="list">
+
+                <a class="item item-avatar" ng-repeat="list in listTaxiGroup" ng-click="showConfirm()">
+                    <img src="{{list.logo}}"/>
+                    <h2>{{list.group}}</h2>
+                    <p><span><i class="ion-ios7-telephone ion calm"></i> {{list.call}} | star : {{list.star}} <i class="icon ion-star assertive"></i></span></p>
+                </a>
+
+            </div>-->
+        </div>
+    </ion-content>
+</ion-view>
+<style>
+    .list-taxi-accept .noTaxiAccept .list a img {
+        border: 1px solid #ECECEC;
+        width: 40px;
+        height: 40px;
+    }
+</style>

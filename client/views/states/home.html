@@ -1,0 +1,359 @@
+<ion-view class="home" title="{{pageTitleCalu}}" ng-cloak>
+<ion-content padding="false">
+
+
+<div id="map" style="width: 100%;
+height: 100%;position: relative;
+top: 0;
+left: 0;
+z-index: 9;
+"></div>
+
+
+<div class="overlay" style="background: transparent;" ng-if="status.showCounter">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="slide4" ng-if="status.showCounter">
+
+    <div class="img-test" style='padding: 46px 47px;border-radius:50%;'>
+        <p style="font-size: 50px;color: #ffffff;font-family: fantasy;">{{status.callCounter}}</p></div>
+    <div resize-width id='pulse1'></div>
+    <div resize-width id='pulse2'></div>
+</div>
+
+<div class="overlay" ng-if="overlaymap">
+
+</div>
+
+
+<div class="swipe-home-left">
+    swipe
+</div>
+<div class="swipe-home-right">
+    swipe
+</div>
+
+<div class="overlay-full">
+
+</div>
+
+
+
+<ion-footer-bar class="item-input-inset" ng-if="!status.hasRouter"
+                ng-class="{'my-footer': settingsList[1].checked}">
+    <div class="left-right" ng-show="!status.hasRouter">
+        <i class="ion-chevron-right"></i>
+        <i class="ion-chevron-left"></i>
+    </div>
+    <div class="slide">
+        <ion-slide-box show-pager="false" active-slide="myActiveSlide">
+            <ion-slide>
+                <div class="row box left button-radio padding">
+
+                    <div class="row text-center">
+                        <div class="radio1" ng-click="checkSeat(1)">
+
+                            <input type="radio" id="radio1" name="radios" value="all" checked="checkek">
+                            <label for="radio1" class="fake-radio"></label>
+                            <label for="radio1" class="radio2">4 Chỗ</label>
+                        </div>
+                        <div class="radio1" ng-click="checkSeat(0)">
+                            <input type="radio" id="radio2" name="radios" value="false">
+                            <label for="radio2" class="fake-radio"></label>
+                            <label for="radio2" class="radio2">7 Chỗ</label>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+
+
+            <ion-slide>
+
+                <div class="box center">
+
+
+                    <div class="footer-new">
+                        <div class="footer-new-box" ng-click="openModalInput();slideOne()">
+                            <ul class="list">
+                                <li class="item">
+                                    <p style="color: #66cc33;
+font-size: 9px;
+text-transform: uppercase;
+font-weight: 600;">Điểm hiện tại</p>
+
+                                    <p style="color: #000;
+font-size: 14px;
+font-weight: 400;">{{startPoint}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </ion-slide>
+            <ion-slide>
+
+                <div class="box right">
+
+                    <div class="footer-new">
+                        <div class="footer-new-box" ng-click="openModalInput();slideTwo()">
+                            <ul class="list">
+                                <li class="item">
+                                    <p style="color: #66cc33;
+font-size: 9px;
+text-transform: uppercase;
+font-weight: 600;">Địa điểm đến</p>
+
+                                    <p style="color: #999;
+font-size: 12px;">{{endPoint}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+
+    </div>
+
+    <div ng-show="!status.hasRouter" style="width: 100%;margin-top: 70px;">
+        <button class="button button-full button-assertive" ng-click="callTaxi()" ng-disabled="status.callTaxiProcess">
+            <i class="ion ion-android-call"></i>GỌI TAXI
+        </button>
+    </div>
+
+
+    <div ng-show="status.hasDriveAccept" style="width: 100%;margin-top: 70px;margin-left:10px">
+        <button class="button  button-full bar-balanced" ng-click="$state.go('app.listTaxiAccept', {hasTaxi: true})">
+            <i class="ion ion-document-text"></i>TAXI ĐỒNG Ý
+        </button>
+    </div>
+
+
+</ion-footer-bar>
+<ion-footer-bar style="height: 70px; padding: 0;" ng-if="status.hasRouter" ng-cloak>
+
+    <div class="footer-home">
+        <ul>
+            <li>
+                <label class="checkbox" ng-show="status.hasRouter">
+                    <input type="checkbox" ng-change="toggelPinPosition()" ng-model="status.pinPosition">
+                    Theo dõi
+                </label>
+            </li>
+            <li>
+                <a ng-click="openConfirmDestroyRoute()">
+                    <i class="ion-close-circled"></i>
+
+                    <p>Hủy lộ trình</p></a>
+            </li>
+            <li>
+                <a ng-click="goToPage('app.driverInfo',{id : idTaxi})">
+                    <i class="ion ion-model-s"></i>
+
+                    <p>Tài xế</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</ion-footer-bar>
+
+
+
+
+<script id="my-modal-input.html" type="text/ng-template">
+
+</script>
+
+<button class="button button-royal rada" ng-click="goToCenter()">
+    <i class="ion-android-locate"></i>
+</button>
+
+<button ng-show="status.showListTaxi" class="button button-energized dinhvi"
+        ng-click="$state.go('app.listTaxiAccept', {hasTaxi: false})">
+    <i class="ion-clipboard"></i>
+
+</button>
+
+<button ng-show="status.hasRouter" class="button button-balanced comment-taxi" ng-click="showPrompt()" >
+    <i class="ion ion-edit" style="position: relative;
+top: -7px;
+right: 2px;"></i>
+</button>
+
+<button ng-show="status.hasRouter" class="button button-energized dinhvi" ng-click="goToTaxi()" >
+    <i class="ion ion-model-s" style="top: -5px;
+right: 7px;"></i>
+</button>
+
+</ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .hide-footer .bar-footer {
+        display: flex;
+    }
+
+    .resultAd {
+        position: fixed;
+        bottom: 110px;
+        z-index: 9999;
+        width: 100%;
+        left: 0;
+        display: none !important;
+    }
+
+    .hide-footer .has-footer {
+        bottom: 124px;
+    }
+
+    .scroll {
+        width: 100%;
+        height: 100%;
+    }
+
+    .showR {
+        display: block !important;
+    }
+
+    .loadcube {
+        float: right;
+    }
+
+    .booksave {
+        color: rgb(243, 198, 18) !important;
+    }
+
+    .loading {
+        font-size: 14px !important;
+    }
+
+    label.checkbox {
+        padding: 0;
+        z-index: 20;
+        width: 40px;
+        position: absolute;
+        height: 40px;
+        min-height: 10px;
+        min-width: 0;
+        right: 4px;
+        top: 170px;
+    }
+
+    .title {
+        display: block !important;
+
+    }
+
+    .leaflet-right .leaflet-control {
+        display: none;
+    }
+
+    .img-test {
+        position: absolute;
+        top: 220px;
+        left: 50%;
+        z-index: 1;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0));
+    }
+
+    #pulse1, #pulse2 {
+        border-radius: 50%;
+        position: absolute;
+        height: 120px;
+        width: 120px;
+        top: 158px;
+        -webkit-animation: radar 3s infinite;
+        animation: radar 3s infinite;
+        background-color: #77C7E2;
+    }
+
+    #pulse2 {
+        -webkit-animation: radar 3s -.5s infinite;
+        animation: radar 3s -.5s infinite;
+    }
+
+    @-webkit-keyframes radar {
+        0%, 100% {
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+            opacity: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 0.5;
+        }
+        99.999% {
+            -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2);
+            opacity: 0;
+        }
+    }
+
+    @keyframes radar {
+        0%, 100% {
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+            opacity: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 0.5;
+        }
+        99.999% {
+            -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2);
+            opacity: 0;
+        }
+    }
+
+    .bar.bar-energized .title {
+        font-size: 14px;
+    }
+
+    .comment-taxi {
+        position: absolute;
+        top: 90px;
+        right: 10px;
+        z-index: 20;
+        width: 32px;
+        height: 30px;
+        min-height: 10px;
+        min-width: 0;
+    }
+
+    #slide4 {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+
+</style>

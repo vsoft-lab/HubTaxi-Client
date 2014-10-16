@@ -1,0 +1,183 @@
+/*
+@import "../../variable.less";
+*/
+.diver-info .chat .has-header {
+  top: 0;
+}
+.diver-info .chat .has-footer {
+  bottom: 156px;
+}
+.diver-info .chat .bar-footer {
+  margin-bottom: 111px;
+}
+.diver-info .chat .bar-footer input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  width: 80%;
+}
+.diver-info .chat .bar-footer button {
+  width: 80px;
+}
+.diver-info .info .avatar {
+  position: relative;
+  height: 200px;
+  background: url(../../../images/bg-taxo.png) 100%;
+  text-align: center;
+  line-height: 22;
+}
+.diver-info .info .avatar img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #3C3C3C;
+}
+.diver-info .info .avatar .username {
+  position: absolute;
+  bottom: 37px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 27px;
+  color: #fff;
+}
+.diver-info .info .avatar .username p:nth-child(2) {
+  margin-left: 20px;
+}
+.diver-info .info .avatar .address {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+.diver-info .info .follow-taxi {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.diver-info .info .follow-taxi .username p {
+  font-size: 15px;
+  margin: 0;
+}
+.diver-info .info .follow-taxi .username p:nth-child(1) {
+  font-weight: bold;
+}
+.diver-info .info .follow-taxi .username p:nth-child(2) {
+  font-size: 12px;
+}
+.diver-info .info .follow-taxi button {
+  min-height: 10px;
+  line-height: 35px;
+}
+.diver-info .info .info-car .list a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+.diver-info .info .info-car .list a i {
+  font-size: 19px;
+  top: -3px;
+}
+.diver-info .info .info-car .list a:after {
+  content: "";
+}
+.diver-info .info .call-info {
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.diver-info .info .call-info button {
+  min-height: 10px;
+  line-height: 33px;
+  font-size: 14px;
+}
+.diver-info .info .call-info button i {
+  font-size: 20px;
+  margin-right: 5px;
+  position: relative;
+}
+.diver-info .button-bar a {
+  border-radius: 0 !Important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  line-height: 30px;
+  min-height: 10px;
+  font-size: 14px;
+}
+.diver-info .button-bar a:nth-child(1) {
+  border-right: 1px solid #ddd !important;
+}
+.diver-info .button-bar a:nth-child(2) {
+  border-left: 1px solid #ddd !important;
+}
+.diver-info .slider {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+.diver-info .scroll-content {
+  border-bottom: 1px solid #ddd;
+}
+.diver-info .messages {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.diver-info .messages li {
+  display: block;
+  float: left;
+  clear: both;
+  max-width: 65%;
+}
+.diver-info .messages li.receipt {
+  float: right;
+}
+.diver-info .messages li.receipt img {
+  float: right;
+}
+.diver-info .messages p {
+  border-radius: .75rem;
+  background: #e6e5eb;
+  color: #383641;
+  padding: .6875rem;
+  margin: 0;
+  font-size: .875rem;
+}
+.diver-info .messages li:nth-child(even) p {
+  background: #158ffe;
+  color: #fff;
+}
+.diver-info .messages img {
+  display: block;
+  max-width: 65%;
+  border-radius: .75rem;
+}
+.price-taxi {
+  margin-top: 20px;
+}
+.price-taxi .table {
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.price-taxi .table th {
+  border-bottom: 1px solid #ddd;
+  font-weight: 700;
+  border-top: 1px solid #ddd;
+  color: #222;
+  line-height: 30px;
+}
+.price-taxi .table tr td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 12px;
+}
+.price-taxi .table tr td:first-child {
+  border-right: 1px solid #ddd;
+}

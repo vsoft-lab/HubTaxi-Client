@@ -1,0 +1,50 @@
+<ion-view title="Cài đặt" class="setting">
+    <ion-content padding="true">
+
+        <div class="avatar text-center">
+
+            <a ng-click="showActionsheet()">
+                <img src="{{ getAvt(UserInfo.avatar) }}" alt=""/>
+
+                <p >Thay đổi ảnh đại diện</p>
+            </a>
+
+            <form>
+                <input type="file" name="pic" id="avatarFile" ng-file-select="onFileSelect($files, UserInfo)">
+            </form>
+        </div>
+
+        <div class="edit-acc">
+            <ul>
+                <li>
+                    <p>Họ tên:</p>
+                    <input type="text" ng-model="UserInfo.fullname">
+                </li>
+                <li>
+                    <p>Số điện thoại:</p>
+                    <input type="tel" ng-model="UserInfo.phone" disabled>
+                </li>
+                <li>
+                    <p>Ngày sinh:</p>
+                    <input type="date" ng-model="UserInfo.birthday">
+                </li>
+                <li>
+                    <p>Địa chỉ:</p>
+                    <input type="text" ng-model="UserInfo.location">
+                </li>
+                <!--<li>
+                    <p>Email:</p>
+                    <input type="Email" ng-model="UserInfo.email">
+                </li>-->
+            </ul>
+
+        </div>
+
+    </ion-content>
+    <div class="submit padding">
+        <button class="button button-block button-positive" ng-click="saveUserInfo(UserInfo)" ng-disabled="disableButtonSave">
+            Xác nhận
+        </button>
+    </div>
+
+</ion-view>

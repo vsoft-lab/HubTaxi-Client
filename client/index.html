@@ -1,0 +1,205 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]--><!--manifest="cache.manifest"-->
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, user-scalable=no,initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!--<link rel="stylesheet" href="bower_components/ionic/release/css/ionic.min.css"/>-->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ionic/css/ionic.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!--<link rel="stylesheet" href="styles/ionic.min.css"/>
+    <link rel="stylesheet" href="styles/leaflet.css"/>-->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <!--<link rel="stylesheet" href="styles/ionic.min.css"/>-->
+    <link rel="stylesheet" href="styles/leaflet.css"/>
+
+    <link rel="stylesheet" href="styles/effect.css"/>
+    <link rel="stylesheet" href="styles/textstyle.css"/>
+    <link rel="stylesheet" href="styles/variable.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/states/about.css">
+    <link rel="stylesheet" href="styles/states/bookmark.css">
+    <link rel="stylesheet" href="styles/states/history.css">
+    <link rel="stylesheet" href="styles/states/home.css">
+
+
+    <!--cinchao-->
+    <link rel="stylesheet" href="styles/states/message.css">
+    <link rel="stylesheet" href="styles/states/register.css">
+    <link rel="stylesheet" href="styles/states/setting.css">
+    <link rel="stylesheet" href="styles/states/support.css">
+    <link rel="stylesheet" href="styles/states/taxicompany.css">
+    <link rel="stylesheet" href="styles/states/child/driver-info.css">
+    <link rel="stylesheet" href="styles/states/child/list-taxi-accert.css">
+    <link rel="stylesheet" href="styles/states/company-detail.css">
+    <link rel="stylesheet" href="styles/states/mytaxi.css">
+    <link rel="stylesheet" href="styles/states/login.css">
+    <link rel="stylesheet" href="styles/ios.css">
+    <!--
+
+        <link rel="stylesheet" href="styles/itaxi.css"/>
+    -->
+    <!-- endbuild -->
+</head>
+<!--
+<body ng-app="itaxiApp" ng-class="(true) ? $state.current.name : ''">
+-->
+<body ng-app="itaxiApp">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div id="loadingPage">
+    <div class="bg-loading">
+
+
+        <img src="images/Default~iphone.png" alt=""/>
+
+    </div>
+    <div class="icon-loading">
+        <i class="ion-loading-c"></i>
+    </div>
+    <!--    <div class="loading-page">
+            <img class="loading-icon" src="images/logo-icon.png">
+
+
+            <img class="loading-text" src="images/text-icon.png">
+
+        </div>-->
+    <!--    <div class="loading-taxi">
+            <img src="images/logo-taxi.png" alt="">
+        </div>-->
+
+
+</div>
+
+<!--<ui-view></ui-view>-->
+<ion-nav-view id="mainView"></ion-nav-view>
+
+<!-- cordova script (this will be a 404 during development) -->
+<script src="./cordova.js"></script>
+<script src="./gpsDetectionPlugin.js"></script>
+
+
+<script src="bower_components/async/lib/async.js"></script>
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+<script src="bower_components/angular-collection/angular-collection.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+<script src="bower_components/collide/collide.js"></script>
+<script src="bower_components/ionic/js/ionic.js"></script>
+<script src="bower_components/ionic/js/ionic-angular.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+
+<script src="bower_components/moment/lang/vi.js"></script>
+<!--<script src="scripts/utils/ionic.js"></script>
+<script src="scripts/utils/ionic-angular.js"></script>
+<script src="scripts/utils/ionic.swipecards.js"></script>-->
+
+<script src="scripts/utils/vsoft.js"></script>
+<script src="scripts/app.js"></script>
+<script src="bower_components/socket.io-client/dist/socket.io.min.js"></script>
+
+
+<script src="scripts/directives/fixIonicOnHammerjs.js"></script>
+<script src="scripts/directives/selectOnClick.js"></script>
+<script src="scripts/services/configuration.js"></script>
+<script src="scripts/services/taxi.js"></script>
+<script src="scripts/services/routes.js"></script>
+<script src="scripts/services/gmaps.js"></script>
+<script src="scripts/services/appDataStore.js"></script>
+
+
+<script src="scripts/controllers/bootstrap.js"></script>
+<script src="scripts/controllers/states/home.js"></script>
+<script src="scripts/controllers/states/about.js"></script>
+<script src="scripts/controllers/states/bookmark.js"></script>
+<script src="scripts/controllers/states/history.js"></script>
+<script src="scripts/controllers/states/login.js"></script>
+<script src="scripts/controllers/states/message.js"></script>
+<script src="scripts/controllers/states/messageDetail.js"></script>
+<script src="scripts/controllers/states/register.js"></script>
+<script src="scripts/controllers/states/setting.js"></script>
+
+<script src="scripts/controllers/states/taxicomany.js"></script>
+<script src="scripts/controllers/states/page2G.js"></script>
+<script src="scripts/controllers/states/address.js"></script>
+<script src="scripts/controllers/states/myTaxi.js"></script>
+<script src="scripts/controllers/states/detailCompany.js"></script>
+
+<script src="scripts/controllers/states/child/driver-info.js"></script>
+<script src="scripts/controllers/states/child/list-taxi-accept.js"></script>
+<script>
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        var alertDismissed = function (index) {
+            navigator.app.exitApp();
+        };
+        if (navigator.connection.type == Connection.NONE) {
+            navigator.notification.alert(
+                    'Xin vui lòng kiểm tra kết nối mạng',  // message
+                    alertDismissed,         // callback
+                    'Không có kết nối mạng',            // title
+                    'OK'                  // buttonName
+            );
+        }
+    }
+</script>
+
+<script src="scripts/filters/tocurrency.js"></script>
+
+<!-- endbuild -->
+
+
+<script src="scripts/utils/leaflet.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ3PPRO4HcOS8nA-GCEX-TXUhU_PAl6F4&sensor=false&region=VN&libraries=places"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<!--<feature name="NetworkStatus">
+    <param name="ios-package" value="CDVConnection" />
+</feature>-->
+</body>
+</html>

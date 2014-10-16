@@ -1,0 +1,127 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-energized">
+        <h1 class="title">Thông tin</h1>
+        <button class="button button-clear button-primary" ng-click="closeModalInput()">Quay lại</button>
+    </ion-header-bar>
+    <ion-content style="background: #fff;width: 100%;">
+        <div class="content-modal">
+            <ion-slide-box on-slide-changed="slideHasChanged($index)" delegate-handle="route" show-pager="false">
+                <ion-slide>
+                    <div class="box blue">
+                        <div class="input-search-modal">
+
+                            <div class="list" style="margin: 0;">
+
+                                <div class="item item-input-inset" style="border: none;">
+                                    <label class="item-input-wrapper">
+
+
+                                        <input type="text" class="form-control" id="originInput" select-on-click
+                                               ng-model="startPoint" ng-change="inputOnChange('originInput')"
+                                               ng-focus="onFocus('originInput')" placeholder="Nhập điểm hiện tại">
+
+
+                                    </label>
+                                    <button class="button button-small">
+                                        Tìm kiếm
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <ul class="list">
+                                <li class="item item-checkbox" ng-repeat="place in resultPlace" >
+                                    <label ng-click="addBookmark(place)" class="checkbox">
+                                        <input type="checkbox">
+                                    </label>
+                                    <a ng-click="selectAdd(place,1);closeModalInput()">
+                                        <i class="ion-ios7-location"></i> {{place.description}}</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </ion-slide>
+
+
+                <ion-slide>
+                    <div class="box blue">
+                        <div class="input-search-modal">
+
+                            <div class="list" style="margin: 0;">
+
+                                <div class="item item-input-inset" style="border: none;">
+                                    <label class="item-input-wrapper">
+
+
+                                        <input type="text" class="form-control" id="destinationInput" select-on-click
+                                               placeholder="Nhập điểm đến của bạn" ng-model="destinationInput"
+                                               ng-change="inputOnChange('destinationInput')" ng-focus="onFocus('destinationInput')"
+                                               >
+
+
+                                    </label>
+                                    <button class="button button-small">
+                                        Tìm kiếm
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <ul class="list">
+                                <li class="item item-checkbox" ng-repeat="place in resultPlace" >
+                                    <label ng-click="addBookmark(place)" class="checkbox">
+                                        <input type="checkbox">
+                                    </label>
+                                    <a ng-click="selectAdd(place,2);closeModalInput()">
+                                        <i class="ion-ios7-location"></i> {{place.description}}</a>
+                                </li>
+                            </ul>
+
+
+
+                        </div>
+                    </div>
+                </ion-slide>
+
+
+                <ion-slide>
+                    <div class="box yellow"><h5 style="margin-top: 20px;">địa điểm hay đi</h5>
+                        <li class="item item-checkbox" ng-repeat="place in listHistory" >
+
+                            <a ng-click="selectAdd(place);closeModalInput()">
+                                <i class="ion-ios7-location"></i> {{place.description}}</a>
+                        </li>
+                        </ul>
+                    </div>
+                </ion-slide>
+
+            </ion-slide-box>
+
+
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="tabs tabs-icon-top tab-footer-input bar-balanced">
+            <a class="tab-item" ng-class="classRouter1" ng-click="slideOne()">
+                <i class="icon ion-flag"></i>
+                Điểm hiện tại
+            </a>
+            <a ng-click="slideTwo()" class="tab-item" ng-class="classRouter2">
+                <i class="icon ion-flag"></i>
+                Điểm đến
+            </a>
+            <a ng-click="slideThree()" class="tab-item" ng-class="classRouter3">
+                <i class="icon ion-model-s"></i>
+                Hay đi
+            </a>
+        </div>
+    </ion-footer-bar>
+</ion-modal-view>
+<style>
+    .slide-box-active {
+        background: rgb(149, 219, 83);
+        color: black;
+        font-weight: bold;
+    }
+</style>

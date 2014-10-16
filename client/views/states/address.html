@@ -1,0 +1,26 @@
+<ion-view title="{{pageTitleCalu}}" class="address">
+    <ion-content padding="true">
+
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="Địa điểm thứ nhất" ng-model="calu.start" id="startPoint"/>
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Địa điểm thứ hai" ng-model="calu.end" id="endPoint"/>
+            </label>
+        </div>
+
+
+        <button ng-click="router(calu)" class="button button-block button-positive">
+           Lộ trình - Khoảng cách
+        </button>
+        <div id="panel" style="width: 100%"></div>
+
+    </ion-content>
+
+</ion-view>
+<style>
+    .adp-directions {
+        width: 100%;;
+    }
+</style>

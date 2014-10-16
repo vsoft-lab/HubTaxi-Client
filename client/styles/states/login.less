@@ -1,0 +1,108 @@
+/*
+@import "../variable.less";
+*/
+
+.login {
+  //background: url('../../images/Background-itaxi.jpg') center center fixed no-repeat;
+  background-size: 100% 100%;
+  .logo-login {
+    img {
+      width: 150px;
+      margin-top: 20px;
+      margin-left: 15px;
+    }
+  }
+  .title-login {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    h4 {
+      font-size: 11px;
+      font-weight: bold;
+    }
+  }
+  .list-inset {
+    label {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
+body.app.login {
+  background: url('../../images/Background-itaxi.jpg') center center fixed ;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#lock-screen {
+
+  #lock-screen-content {
+    width: 250px;
+    margin: 10% auto 0 auto;
+    text-align: center;
+    #lock-screen-avatar {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    }
+    #lock-screen-info {
+      h1 {
+        font-family: 'oswald';
+        font-size: 30px;
+        font-weight: bold;
+        color: #FFFFFF;
+      }
+      .email {
+        margin-bottom: 20px;
+        color: #FFFFFF;
+      }
+      .mbm, .mvm, .mam {
+        margin-bottom: 10px !important;
+        button {
+          width: 100%;
+          border-radius: 0;
+          margin-top: 20px;
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 14px;
+          height: 30px;
+          padding: 0;
+          min-height: 10px;
+          line-height: 30px;
+        }
+      }
+      input {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .input-group {
+        margin-bottom: 10px;
+        width: 100%;
+        position: relative;
+        input {
+          padding-left: 40px;
+          border-radius: 0;
+        }
+        i {
+          position: absolute;
+          left: 0;
+          z-index: 9;
+          line-height: 35px;
+          font-size: 18px;
+          padding: 0 10px;
+          color: #555;
+        }
+      }
+
+
+    }
+  }
+}
+
+
+
+

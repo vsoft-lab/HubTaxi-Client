@@ -1,0 +1,60 @@
+/*
+@import "../variable.less";
+*/
+
+.setting {
+  margin-top: 10px;
+  .avatar {
+    a {
+      img {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 70px;
+        height: 70px;
+      }
+      p {
+        color: blue;
+      }
+    }
+    form {
+      position: absolute;
+      top: -1000px;
+    }
+  }
+  .edit-acc {
+    ul {
+      li {
+        margin-bottom: 5px;
+        &:last-child {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          font-weight: bold;
+        }
+        input {
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 5px 10px;
+          height: 35px;
+          background: #ddd;
+          font-size: 13px;
+          &:focus {
+            background: #fff;
+          }
+        }
+      }
+    }
+
+  }
+  .submit {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    button {
+      box-shadow: 0px 5px 0px #145fd7;
+      border-radius: 5px;
+      border-color: transparent;
+    }
+  }
+}

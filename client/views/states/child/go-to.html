@@ -1,0 +1,50 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-energized">
+        <h1 class="title">Điểm Đến</h1>
+        <button class="button button-clear button-primary" ng-click="closeModalGoTo()">Quay lại</button>
+    </ion-header-bar>
+    <ion-content style="background: #fff;width: 100%;">
+        <div class="input-search-modal">
+
+            <div class="list" style="margin: 0;">
+
+                <div class="item item-input-inset" style="border: none;">
+                    <label class="item-input-wrapper">
+
+
+                        <input type="text" class="form-control" id="destinationInput" select-on-click
+                               placeholder="Nhập điểm đến của bạn" ng-model="destinationInput"
+                               ng-change="inputOnChange('destinationInput')" ng-focus="onFocus('destinationInput')"
+                               ng-blur="onBlur()">
+
+
+                    </label>
+                    <button class="button button-small">
+                        Tìm kiếm
+                    </button>
+                </div>
+
+            </div>
+
+            <ul class="list">
+                <li class="item item-checkbox" ng-repeat="place in resultPlace" >
+                    <label ng-click="addBookmark(true)" class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                    <a ng-click="selectAdd(place,2);closeModalGoTo()">
+                        <i class="ion-ios7-location"></i> {{place.description}}</a>
+                </li>
+            </ul>
+
+
+
+        </div>
+    </ion-content>
+</ion-modal-view>
+<style>
+    .slide-box-active {
+        background: rgb(149, 219, 83);
+        color: black;
+        font-weight: bold;
+    }
+</style>

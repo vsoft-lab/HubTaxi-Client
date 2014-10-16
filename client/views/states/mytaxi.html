@@ -1,0 +1,25 @@
+<ion-view title="Taxi của tôi" class="my-taxi">
+    <ion-content>
+        <!--<div class="search-form">
+            <input type="text" placeholder="tim kiếm nhanh">
+            <i class="ion ion-ios7-search-strong"></i>
+        </div>-->
+        <p ng-hide="checkMyTaxi" style="text-align: center;border-color: #498f24;
+background-color: #6c3;margin: 0;padding: 5px;font-size: 13px;
+color: #fff;">Bạn chưa có Taxi cá nhân nào! Để thêm Taxi chọn thông tin Taxi sau đó ấn thêm Taxi của tôi</p>
+        <!--<img ng-hide="checkMyTaxi" style="width: 100%" src="./images/mytaxi.png" alt="Taxi Của tôi"/>-->
+
+        <div class="list" ng-show="checkMyTaxi">
+
+            <a class="item item-thumbnail-left" ng-repeat="taxi in listMyTaxi" ng-click="goToPage('app.driverInfo', {id: taxi.driver.id})">
+                <img style="max-width: 60px!important;" ng-src="{{getImgUrlDefault(taxi.driver.avatar)}}">
+                <h2 style="margin-left: -20px;">{{taxi.driver.fullname}}</h2>
+                <p style="margin-left: -20px;">{{taxi.driver.bio}}</p>
+                <p style="margin-left: -20px;">{{taxi.driver.username}}</p>
+                <i class="ion-android-call"></i>
+            </a>
+        </div>
+
+    </ion-content>
+
+</ion-view>

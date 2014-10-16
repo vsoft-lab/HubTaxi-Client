@@ -1,0 +1,9 @@
+/*
+@import "../variable.less";
+*/
+.register .list-inset .item-input span {
+  font-size: 13px;
+}
+.register .padding {
+  margin-bottom: 20px;
+}

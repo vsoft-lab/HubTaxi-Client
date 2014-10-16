@@ -1,0 +1,25 @@
+<div class="group-control config-remove">
+    <!--<label>Lý do xóa: </label>
+
+    <select ng-model="deleteInfo.deleteReason" class="form-control select--large" width="100%">
+        <option value="" selected="selected">Chọn lý do</option>
+        <option value="Lý do 1">Lý do 1</option>
+        <option value="Lý do 2">Lý do 2</option>
+        <option value="Lý do 3">Lý do 3</option>
+        <option value="Lý do khác">Lý do khác</option>
+    </select>-->
+    <label>
+        <select ng-model="deleteInfo.deleteReason" class="form-control select--large">
+            <option value="" selected="selected"> Chọn lý do: </option>
+            <option>Việc đột xuất không thể đi Taxi</option>
+            <option>Đi Taxi vào 1 thời điểm khác</option>
+            <option>Thời gian đến đón quá chậm</option>
+            <option>Lý do khác</option>
+        </select>
+    </label>
+</div>
+
+<div class="group-control" ng-if="deleteInfo.deleteReason == 'Lý do khác'">
+    <label>Nhập lý do : </label>
+    <input type="text" class="light-input full form-control" ng-model="deleteInfo.otherReason">
+</div>

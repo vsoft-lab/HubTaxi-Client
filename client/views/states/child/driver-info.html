@@ -1,0 +1,88 @@
+<ion-view title="{{pageTitleCalu}}" class="diver-info">
+    <ion-content padding="false">
+        <div class="button-bar bar-stable">
+
+        </div>
+
+
+        <div class="box info">
+            <div class="avatar">
+                <img ng-src="{{getImgUrl(infomation[0].avatar)}}"/>
+            </div>
+            <div class="follow-taxi">
+
+                <!--<button class="button button-positive">
+                    <i class="ion-checkmark-round" ></i> Đặt làm tài xế riêng
+                </button>-->
+
+                <div class="username">
+                    <p>{{infomation[0].fullname}}</p>
+
+                    <p>{{infomation[0].location}}</p>
+                </div>
+            </div>
+
+            <div class="info-car">
+                <div class="list">
+                    <a class="item item-icon-left">
+                        <i class="icon ion-pricetag calm"></i>
+                        Hãng: {{infomation[0].company.companyName}}
+                    </a>
+                    <a class="item item-icon-left">
+                        <i class="icon ion-model-s calm"></i>
+                        Loại xe: {{infomation[0].type.carMarker}}
+                    </a>
+                    <a class="item item-icon-left" href="tel:{{infomation[0].phone}}">
+                        <i class="icon ion-iphone calm"></i>
+                        Số điện thoại: {{infomation[0].phone}}
+                    </a>
+                    <a class="item item-icon-left ">
+                        <i class="icon ion-card calm"></i>
+                        Biển số: {{infomation[0].username}}
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="call-info" ng-if="!status.hasRouter && status.hasDriveAccept">
+                <button class="button button-block button-balanced" ng-click="chooseTaxi(infomation[0])"
+                        ng-disabled="status.chooseTaxiProcess">
+                    <i class="ion-ios7-telephone"></i> Chấp nhận Taxi
+                </button>
+            </div>
+
+
+            <div class="call-info" ng-if="!status.hasRouter && !status.hasDriveAccept">
+                <button class="button button-block button-balanced" ng-click="quickChooseTaxi(infomation[0])"
+                        ng-disabled="status.chooseTaxiProcess">
+                    <i class="ion-ios7-telephone"></i> Gọi taxi này
+                </button>
+            </div>
+
+            <div class="call-info">
+                <button class="button button-block bar-calm" ng-show="canAddTaxi"
+                        ng-click="addMyTaxi(infomation[0])">
+                    <i class="ion-person-add"></i> Thêm Taxi của tôi
+                </button>
+            </div>
+
+
+            <div class="call-info">
+                <button class="button button-block bar-calm" ng-hide="canAddTaxi" ng-disabled="removeMyTaxiProcess"
+                        ng-click="removeMyTaxi()">
+                    <i class="ion-minus-circled"></i> Xóa tài xế của tôi
+                </button>
+            </div>
+
+
+            <div class="call-info" ng-if="status.hasRouter">
+                <button class="button button-block button-balanced" ng-click="callTaxiPhone(infomation[0])">
+                  <i class="ion-ios7-telephone"></i> Gọi điện thoại riêng
+                </button>
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

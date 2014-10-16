@@ -1,0 +1,76 @@
+<ion-view title="Danh sách hãng taxi" class="taxicompany">
+
+    <ion-content padding="true" class="company-ios">
+
+        <div class="header-search">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-ios7-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search" ng-model="search">
+                </label>
+            </div>
+        </div>
+        <div class="list">
+            <a class="item item-avatar" ng-repeat="data in listTaxiGroup | filter:search">
+                <img ng-src="{{data.logo}}">
+               <h2>{{data.group}}</h2>
+                <p>Hotline : {{data.call}}</p>
+                <i class="ion-android-call" ng-click="showConfirm(data)"></i>
+            </a>
+        </div>
+
+        <!--
+                <div class="list" ng-repeat="list in listTaxiGroup">
+
+                        <a class="item item-thumbnail-left item-button-right">
+                            <img src="{{list.logo}}">
+                            <h2>{{list.group}}</h2>
+                            <p><i class="ion ion-android-call positive"></i> {{list.call}}</p>
+
+                            <button class="button button-positive">
+                                <a href="tel: {{list.call}}"><i class="icon ion-ios7-telephone-outline"> Gọi </i></a>
+                            </button>
+                        </a>
+                </div>-->
+
+       <!-- <div class="list" ng-repeat="list in listTaxiGroup">
+
+            <li class="item item-thumbnail-left item-button-right">
+                <img src="{{list.logo}}">
+
+                <h2>{{list.group}}</h2>
+
+                <p><i class="ion ion-android-call positive"></i> {{list.call}}</p>
+&lt;!&ndash;                <button class="button button-positive">
+                    <a href="tel: {{list.call}}">
+                        <i class="icon ion-ios7-telephone-outline"></i>
+                    </a>
+                </button>&ndash;&gt;
+
+            </li>
+        </div>-->
+
+
+
+        <!--<ion-nav-bar animation="nav-title-slide-ios7"
+                     type="bar-positive"
+                     back-button-type="button-icon"
+                     back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+
+        <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+        <ion-view title="'Home'">
+            <ion-content has-header="true" padding="true">
+                <p>Example of Ionic tabs. Navigate to each tab, and
+                    navigate to child views of each tab and notice how
+                    each tab has its own navigation history.</p>
+                <p>
+                    <a class="button icon icon-right ion-chevron-right" href="#/support">Scientific Facts</a>
+                </p>
+            </ion-content>
+        </ion-view>-->
+
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+CACHE MANIFEST
+CACHE
+# cache nothin
+NETWORK:
+http://mt1.googleapis.com
+http://mt2.googleapis.com
+http://mt3.googleapis.com
+http://mt4.googleapis.com
+http://maps.googleapis.com
+http://mts0.googleapis.com
+http://mts1.googleapis.com

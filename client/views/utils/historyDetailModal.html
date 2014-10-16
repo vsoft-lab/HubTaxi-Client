@@ -1,0 +1,72 @@
+<div class="modal">
+    <ion-header-bar class="bar bar-header bar-energized">
+        <h1 class="title">Lịch sử lộ trình</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Quay lại</button>
+    </ion-header-bar>
+    <ion-content>
+        <div >
+            <div class="list" style="font-size:12px;">
+
+                <div class="item item-divider">
+                    Thông tin lộ trình
+                </div>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Thời gian :</span> {{detailHistory.startAt | amCalendar }}
+                </p>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Tình trạng :</span> {{filterStatus(detailHistory.status) }}
+                </p>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Từ :</span> {{detailHistory.startPoint}}
+                </p>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Đến :</span> {{detailHistory.endPoint}}
+                </p>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Ước lượng :</span> {{detailHistory.distance / 1000}} KM - {{detailHistory.amount | toCurrency}} VNĐ
+                </p>
+
+
+                <div class="item item-divider">
+                    Tài xế
+                </div>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Tên :</span> {{detailHistory.driver.fullname}}
+                </p>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Số điện thoại :</span> {{detailHistory.driver.phone}}
+                </p>
+
+                <p class="item">
+                    <span style="width:150px;float:left">Số xe :</span> {{detailHistory.driver.username}}
+                </p>
+
+                <div class="item item-divider" >
+                    Gửi phản hồi
+                </div>
+                <p class="item">
+                    <textarea name="ax" id="" cols="30" rows="10" ng-model="reportContent"></textarea><br/>
+                    <button class="button button-energized" style="width: 100%" ng-click="addReport(reportContent)" ng-disabled="addReportProcess">
+                        Gửi
+                    </button>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+</div>
+<style>
+    textarea{
+        border:1px solid #f2f2f2;
+        border-radius:3px;
+        -webkit-box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2) ;
+        -moz-box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+    }
+</style>

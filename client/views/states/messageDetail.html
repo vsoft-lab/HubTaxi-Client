@@ -1,0 +1,17 @@
+<ion-view title="Tin nhắn" class="messages">
+
+    <ion-content class="detail-message">
+        <div class="padding">
+            <a class="item item-thumbnail-left" style="border: none;">
+                <img src="./images/message-icon.jpg">
+                <h4>{{messageDetail.message.title}}</h4>
+                <!--<p>SĐT: 01638678364</p>-->
+                <p>{{messageDetail.message.time | amCalendar}}</p>
+            </a>
+            <div style="font-size: 12px;
+text-indent: 10px;" class="nd-message">
+                {{messageDetail.message.body}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

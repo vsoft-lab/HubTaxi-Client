@@ -1,0 +1,144 @@
+/*
+@import "../variable.less";
+*/
+.unread {
+  background: #f2f2f2;
+}
+.diver-info .messages li {
+  border-radius: .75rem;
+  background: #e6e5eb;
+  color: #383641;
+  padding: .6875rem;
+  margin: 0;
+  font-size: .875rem;
+  margin-bottom: 10px;
+}
+.diver-info .messages li small {
+  color: #828282;
+}
+.diver-info .messages li.receipt {
+  background: #158ffe;
+  color: #fff;
+}
+.diver-info .messages li.receipt small {
+  color: #DEDEDE;
+  float: right;
+}
+.messages .list-message {
+  margin: 0;
+}
+.messages .list-message a {
+  min-height: 30px;
+  border: none;
+  padding: 15px 70px 5px 70px;
+  /*margin-top: -12px;*/
+}
+.messages .list-message a:after {
+  content: "";
+}
+.messages .list-message a h2 {
+  font-size: 12px;
+  font-weight: bold;
+}
+.messages .list-message a p {
+  font-size: 11px;
+  color: #999;
+  margin-top: -5px;
+}
+.messages .list-message a button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  min-height: 10px;
+  line-height: 0;
+  font-size: 12px;
+  padding: 10px;
+  width: 110px;
+  text-align: center;
+}
+.messages .list-message img {
+  width: 40px;
+  height: 40px;
+  background: #F8F8F8;
+  border: 1px solid #F3F3F3;
+}
+.messages .content-message a {
+  border: none;
+  border-bottom: 1px solid #ddd !important;
+  margin: 0;
+  margin-bottom: 1px;
+  padding-right: 40px;
+}
+.messages .content-message a:first-child {
+  border-top: 1px solid #ddd !important;
+}
+.messages .content-message a:last-child {
+  border: none;
+}
+.messages .content-message a.active {
+  background-color: #f3f3f3 !important;
+}
+.messages .content-message a h2 {
+  font-size: 13px;
+}
+.messages .content-message a h2 i {
+  color: #f0b840;
+}
+.messages .content-message a p {
+  font-size: 12px;
+  margin: 0;
+}
+.messages .content-message a p i {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  bottom: 18;
+  color: #999;
+}
+.messages .content-message a p.p-mess {
+  width: 90%;
+  float: left;
+}
+.messages .content-message a > span {
+  position: absolute;
+  right: 17px;
+  bottom: 14px;
+  font-size: 10px;
+  color: #999;
+}
+.messages .content-message a > i {
+  width: 10%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 20px !important;
+  color: #9C9A94 !important;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+}
+.detail-message a {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.detail-message a span {
+  position: absolute;
+  right: 10px;
+  top: 33px;
+  color: #999;
+}
+.detail-message a h2 {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+.detail-message a h4 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+.detail-message a p {
+  margin: 0;
+  font-size: 12px;
+  color: #999;
+}
+.detail-message .nd-message {
+  margin-top: 10px;
+}

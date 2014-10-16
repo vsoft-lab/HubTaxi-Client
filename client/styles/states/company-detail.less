@@ -1,0 +1,222 @@
+/*
+@import "../../variable.less";
+*/
+
+
+.company-detail{
+  .scroll, .scroll-content {
+    width: 100%;
+    height: 100%;
+  }
+  .chat {
+    .has-header {
+      top: 0;
+    }
+    .has-footer {
+      bottom: 156px;
+    }
+    .bar-footer {
+      margin-bottom: 111px;
+      input {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-right: 10px;
+        padding: 5px 10px;
+        width: 80%;
+      }
+      button {
+        width: 80px;
+      }
+    }
+  }
+  .info {
+    .avatar {
+      position: relative;
+      height: 200px;
+      background: url(../../images/bg-taxo.png) 100%;
+      text-align: center;
+      line-height: 22;
+      img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 3px solid #3C3C3C;
+      }
+      .username {
+        position: absolute;
+        bottom: 37px;
+        left: 10px;
+        font-weight: bold;
+        font-size: 27px;
+        color: #fff;
+        p {
+          &:nth-child(2) {
+            margin-left: 20px;
+          }
+        }
+      }
+      .address {
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+    .follow-taxi {
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      .username {
+        p {
+          font-size: 15px;
+          margin: 0;
+          &:nth-child(1) {
+            font-weight: bold;
+          }
+          &:nth-child(2) {
+            font-size: 12px;
+          }
+        }
+      }
+      button {
+        min-height: 10px;
+        line-height: 35px;
+      }
+    }
+    .info-car {
+      .list {
+        a {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          font-size: 12px;
+          border: none;
+          i {
+            font-size: 19px;
+            top: -3px;
+          }
+          &:after {
+            content: "";
+          }
+        }
+      }
+    }
+    .call-info {
+      padding: 0 10px;
+      button {
+        min-height: 10px;
+        line-height: 33px;
+        font-size: 14px;
+        i {
+          font-size: 25px;
+          margin-right: 5px;
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+  }
+
+  .button-bar {
+    //margin-top: 54px;
+
+    a {
+      border-radius: 0 !Important;
+      border-left: 0 !important;
+      border-right: 0 !important;
+      line-height: 30px;
+      min-height: 10px;
+      font-size: 14px;
+      &:nth-child(1) {
+        border-right: 1px solid #ddd !important;
+      }
+      &:nth-child(2) {
+        border-left: 1px solid #ddd !important;
+      }
+    }
+  }
+  .slider {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scroll-content {
+    border-bottom: 1px solid #ddd;
+    //padding-left: 10px;
+    //padding-right: 10px;
+
+  }
+  .messages {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+  }
+
+  .messages li {
+    display: block;
+    float: left;
+    clear: both;
+    max-width: 65%;
+  }
+
+
+  .messages li.receipt {
+    float:right;
+  }
+
+  .messages li.receipt img {
+    float:right;
+  }
+
+  .messages p {
+    border-radius:.75rem;
+    background:#e6e5eb;
+    color:#383641;
+    padding:.6875rem;
+    margin:0;
+    font-size:.875rem;
+  }
+
+  .messages li:nth-child(even) p {
+    background:#158ffe;
+    color:#fff;
+  }
+
+  .messages img {
+    display:block;
+    max-width:65%;
+    border-radius:.75rem;
+  }
+}
+.price-taxi {
+  margin-top: 20px;
+  .table {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    th {
+      border-bottom: 1px solid #ddd;
+      font-weight: 700;
+      border-top: 1px solid #ddd;
+      color: #222;
+      line-height: 30px;
+    }
+    tr {
+      td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        font-size: 12px;
+        &:first-child {
+          border-right: 1px solid #ddd;
+        }
+      }
+    }
+  }
+}

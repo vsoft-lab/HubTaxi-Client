@@ -1,0 +1,50 @@
+/*
+@import "../variable.less";
+*/
+.setting {
+  margin-top: 10px;
+}
+.setting .avatar a img {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 70px;
+  height: 70px;
+}
+.setting .avatar a p {
+  color: blue;
+}
+.setting .avatar form {
+  position: absolute;
+  top: -1000px;
+}
+.setting .edit-acc ul li {
+  margin-bottom: 5px;
+}
+.setting .edit-acc ul li:last-child {
+  margin: 0;
+}
+.setting .edit-acc ul li p {
+  margin: 0;
+  font-weight: bold;
+}
+.setting .edit-acc ul li input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  height: 35px;
+  background: #ddd;
+  font-size: 13px;
+}
+.setting .edit-acc ul li input:focus {
+  background: #fff;
+}
+.setting .submit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.setting .submit button {
+  box-shadow: 0px 5px 0px #145fd7;
+  border-radius: 5px;
+  border-color: transparent;
+}
