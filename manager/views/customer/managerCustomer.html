@@ -114,7 +114,7 @@
         </div>
         <div class="col-md-1">
             <div class="export-new-item">
-                <button type="button" class="btn btn-primary pull-right"><i
+                <button type="button" class="btn btn-primary pull-right" ng-click="alert('Function has updating ...')"><i
                         class="glyphicon glyphicon-download-alt"></i> Export
                 </button>
             </div>
@@ -132,7 +132,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="user in listUsers" ng-click="gotoPage('main.detailCustomer',{id : user._id})">
+                    <!-- <tr ng-repeat="user in listUsers" ng-click="gotoPage('main.detailCustomer',{id : user._id})"> -->
+                    <tr ng-repeat="user in listUsers" ng-click="">
                         <td>{{$index}}</td>
                         <td>{{user.deviceId || user.username}}</td>
                         <td>{{user.countCallTaxi || 10}}</td>
