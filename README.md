@@ -14,6 +14,7 @@ In addition, I also provide a apk file named HubTaxi.apk to install android mach
 Read full info at [here!](https://github.com/vsoft-lab/HubTaxi-Server)
 
 ===
-Authors:
+Contributors:
+- Khoiln at khoi@vsoft.vn
 - Tungtouch at tungnguyen@vsoft.vn
 - NgaNguyenDuy at kyo1508@gmail.com
