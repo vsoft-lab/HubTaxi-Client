@@ -15,6 +15,5 @@ Read full info at [here!](https://github.com/vsoft-lab/HubTaxi-Server)
 
 
 Contributors:
-- Khoiln at khoi@vsoft.vn
 - Tungtouch at tungnguyen@vsoft.vn
 - NgaNguyenDuy at kyo1508@gmail.com
