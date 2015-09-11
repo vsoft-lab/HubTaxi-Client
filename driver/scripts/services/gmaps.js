@@ -41,7 +41,7 @@ angular.module('taxigoDriverApp')
 
                     gMaps.map = L.map('map').setView([21.029771, 105.801811], 17);
 
-                    L.tileLayer('http://{s}.tiles.mapbox.com/v3/taipham.i6k2o57c/{z}/{x}/{y}.png',
+                    L.tileLayer('http://{s}.tiles.mapbox.com/v4/thinhnvv.cieef6v3v025rs9lx3852m36x/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidGhpbmhudnYiLCJhIjoiZjQzYWM1ZDQ4YjNkNjc5YzQwZjA5OWIwNTNhZDNhODMifQ.53wH0q9UO48XrvK_TUESmg',
                         { maxZoom: 18  }).addTo(gMaps.map);
                     /*
                      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',

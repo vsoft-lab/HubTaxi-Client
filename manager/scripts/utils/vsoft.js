@@ -23,7 +23,7 @@ angular.module('framework.vsoft', ['ui.vsoft', 'core.vsoft'])
         deviceId: (window.device) ? device.uuid.toLowerCase() : 'what.do.namehihi????',
         defaultPass: 'defaultPassword',
         name: 'iTaxi',
-        apiHost: 'http://chris-ictu.tk:6868', // taxigo.vn:997
+        apiHost: 'http://192.168.1.107:6868', // taxigo.vn:997
         mediaHost: 'http://vsoft.vn:1235'
     });
 
