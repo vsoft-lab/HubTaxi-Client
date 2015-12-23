@@ -13,7 +13,3 @@ In addition, I provide a apk file named HubTaxi.apk to install android machine. 
 
 Read full info at [here!](https://github.com/vsoft-lab/HubTaxi-Server)
 
-
-Contributors:
-- Tungtouch at tungnguyen@vsoft.vn
-- NgaNguyenDuy at kyo1508@gmail.com
